@@ -1,0 +1,3344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RWPA Awards — Ватерпольная премия</title>
+<meta name="description" content="Ежегодная премия, отмечающая лучших игроков, тренеров и моменты сезона в водном поло. Голосуй за победителей!">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RWPA Awards">
+<meta property="og:title" content="RWPA Awards — Ватерпольная премия">
+<meta property="og:description" content="Ежегодная премия, отмечающая лучших игроков, тренеров и моменты сезона в водном поло. Голосуй за победителей!">
+<meta property="og:image" content="https://makivan2010.github.io/rwpa-site/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://makivan2010.github.io/rwpa-site/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RWPA Awards — Ватерпольная премия">
+<meta name="twitter:description" content="Ежегодная премия, отмечающая лучших игроков, тренеров и моменты сезона в водном поло. Голосуй за победителей!">
+<meta name="twitter:image" content="https://makivan2010.github.io/rwpa-site/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #08005D;
+    --navy-deep: #050041;
+    --turquoise: #00B8D9;
+    --turquoise-dark: #0090AD;
+    --gold: #F2B705;
+    --bg-soft: #F4F6FB;
+    --text: #1C1C28;
+    --text-soft: rgba(28,28,40,0.62);
+    --white: #FFFFFF;
+    --radius: 14px;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  .hidden{ display:none !important; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--text);
+    background:var(--white);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  img{ max-width:100%; display:block; }
+
+  a{ color:inherit; text-decoration:none; }
+
+  .eyebrow{
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:0.78rem;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+  }
+
+  h1,h2,h3{
+    font-family:'Bebas Neue', sans-serif;
+    font-weight:400;
+    letter-spacing:0.01em;
+    line-height:1.02;
+  }
+
+  .container{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(8,0,93,0.08);
+    transition:box-shadow .3s ease;
+  }
+  header.scrolled{ box-shadow:0 6px 24px rgba(8,0,93,0.08); }
+
+  .nav-wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 32px;
+    max-width:1180px;
+    margin:0 auto;
+  }
+
+  .brand-group{ display:flex; align-items:center; gap:16px; }
+  .brand{ display:flex; align-items:center; gap:10px; }
+  .brand img{ height:42px; width:auto; }
+  .brand-logotype{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:1.6rem;
+    line-height:1;
+    letter-spacing:0.02em;
+    color:var(--navy);
+    display:inline-flex;
+    align-items:baseline;
+    gap:6px;
+  }
+  .brand-logotype span{
+    font-size:0.7rem;
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    letter-spacing:0.12em;
+    color:var(--turquoise-dark);
+  }
+  .footer-logotype{ color:var(--white); margin-bottom:14px; }
+  .footer-logotype span{ color:var(--turquoise); }
+
+  nav ul{
+    display:flex;
+    gap:26px;
+    list-style:none;
+  }
+  nav a{
+    font-family:'Oswald', sans-serif;
+    font-size:0.86rem;
+    font-weight:500;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    color:var(--navy);
+    position:relative;
+    padding-bottom:4px;
+    white-space:nowrap;
+  }
+  .nav-right{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    flex:none;
+  }
+  nav a::after{
+    content:'';
+    position:absolute;
+    left:0; bottom:0;
+    width:0; height:2px;
+    background:var(--turquoise);
+    transition:width .25s ease;
+  }
+  nav a:hover::after{ width:100%; }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:0.85rem;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    padding:13px 28px;
+    border-radius:999px;
+    border:2px solid transparent;
+    background:none;
+    appearance:none;
+    cursor:pointer;
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .btn-primary{
+    background:var(--turquoise);
+    color:var(--navy-deep);
+  }
+  .btn-primary:hover{
+    background:var(--turquoise-dark);
+    color:var(--white);
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px rgba(0,184,217,0.35);
+  }
+  .btn-outline{
+    border-color:rgba(255,255,255,0.55);
+    color:var(--white);
+  }
+  .btn-outline:hover{
+    border-color:var(--white);
+    background:rgba(255,255,255,0.08);
+    transform:translateY(-2px);
+  }
+  .btn-outline-navy{
+    border-color:rgba(8,0,93,0.3);
+    color:var(--navy);
+  }
+  .btn-outline-navy:hover{
+    border-color:var(--navy);
+    background:rgba(8,0,93,0.05);
+  }
+
+  .btn-sm{ padding:10px 22px; font-size:0.78rem; }
+
+  /* ---------- MOBILE NAV ---------- */
+  .nav-toggle{
+    display:none;
+    align-items:center;
+    justify-content:center;
+    width:40px;
+    height:40px;
+    padding:0;
+    border:none;
+    background:transparent;
+    color:var(--navy);
+    cursor:pointer;
+  }
+  .nav-toggle svg{ width:24px; height:24px; }
+
+  .mobile-nav{
+    display:none;
+    flex-direction:column;
+    background:var(--white);
+    border-top:1px solid rgba(8,0,93,0.08);
+    box-shadow:0 16px 28px rgba(8,0,93,0.1);
+  }
+  .mobile-nav.open{ display:flex; }
+  .mobile-nav ul{ list-style:none; display:flex; flex-direction:column; }
+  .mobile-nav a{
+    display:block;
+    padding:16px 32px;
+    font-family:'Oswald', sans-serif;
+    font-size:0.92rem;
+    font-weight:500;
+    letter-spacing:0.02em;
+    text-transform:uppercase;
+    color:var(--navy);
+    border-top:1px solid rgba(8,0,93,0.06);
+  }
+  .mobile-nav a:first-child{ border-top:none; }
+  .mobile-nav a:hover{ background:var(--bg-soft); }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 65%, #030027 100%);
+    color:var(--white);
+    overflow:hidden;
+    padding:120px 0 0;
+  }
+
+  .hero-ball{
+    position:absolute;
+    top:-120px;
+    right:-100px;
+    width:520px;
+    height:520px;
+    opacity:0.07;
+    filter:brightness(0) invert(1);
+    pointer-events:none;
+  }
+
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px 100px;
+    text-align:center;
+  }
+
+  .hero .eyebrow{
+    color:var(--gold);
+    display:inline-block;
+    padding:8px 18px;
+    border:1px solid rgba(242,183,5,0.4);
+    border-radius:999px;
+    margin-bottom:28px;
+  }
+
+  .hero h1{
+    font-size:clamp(3.4rem, 9vw, 7.2rem);
+    color:var(--white);
+    text-shadow:0 20px 60px rgba(0,0,0,0.35);
+  }
+  .hero h1 span{
+    color:transparent;
+    -webkit-text-stroke:2px var(--turquoise);
+  }
+
+  .hero p.lead{
+    max-width:560px;
+    margin:26px auto 44px;
+    font-size:1.08rem;
+    color:rgba(255,255,255,0.72);
+  }
+
+  .hero-cta{
+    display:flex;
+    gap:16px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .hero-merch-promo{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin:28px auto 0;
+    padding:10px 20px;
+    border-radius:999px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(242,183,5,0.35);
+    color:rgba(255,255,255,0.88);
+    font-family:'Oswald', sans-serif;
+    font-size:0.82rem;
+    letter-spacing:0.01em;
+    max-width:100%;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .hero-merch-promo:hover{
+    background:rgba(255,255,255,0.12);
+    transform:translateY(-1px);
+  }
+  .hero-merch-promo svg{ width:16px; height:16px; flex:none; color:var(--turquoise); }
+  .hero-merch-promo-badge{
+    flex:none;
+    font-weight:700;
+    font-size:0.68rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--navy-deep);
+    background:var(--gold);
+    padding:3px 9px;
+    border-radius:999px;
+  }
+  @media (max-width:560px){
+    .hero-merch-promo{ font-size:0.76rem; padding:9px 16px; text-align:left; }
+  }
+
+  /* wave signature — echoes the mark under the ball in the logo */
+  .wave-divider{
+    position:relative;
+    line-height:0;
+    width:100%;
+  }
+  .wave-divider svg{ width:100%; height:auto; display:block; }
+  .wave-track{
+    animation:wave-drift 18s linear infinite;
+  }
+  @keyframes wave-drift{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-400px); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .wave-track{ animation:none; }
+  }
+
+  /* ---------- STATS ---------- */
+  .stats{
+    background:var(--bg-soft);
+    padding:56px 0;
+  }
+  .stats-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    text-align:center;
+  }
+  .stat + .stat{ border-left:1px solid rgba(8,0,93,0.1); }
+  .stat-num{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:3.4rem;
+    color:var(--navy);
+    position:relative;
+    display:inline-block;
+  }
+  .stat-num::after{
+    content:'';
+    display:block;
+    width:34px;
+    height:3px;
+    background:var(--gold);
+    margin:6px auto 10px;
+    border-radius:2px;
+  }
+  .stat-label{
+    font-family:'Oswald', sans-serif;
+    font-size:0.78rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--text-soft);
+  }
+
+  /* ---------- SECTION HEADS ---------- */
+  .section{ padding:96px 0; }
+  .section-head{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    margin-bottom:48px;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+  .section-head .eyebrow{ color:var(--turquoise-dark); margin-bottom:10px; display:block; }
+  .section-head h2{
+    font-size:clamp(2.2rem, 4vw, 3.2rem);
+    color:var(--navy);
+  }
+
+  /* ---------- NOMINATIONS ---------- */
+  .voting-closed-banner{
+    max-width:900px;
+    margin:0 auto 24px;
+    padding:14px 20px;
+    border-radius:10px;
+    background:rgba(242,183,5,0.12);
+    border:1px solid rgba(242,183,5,0.4);
+    color:var(--navy);
+    font-family:'Oswald', sans-serif;
+    font-size:0.85rem;
+    text-align:center;
+  }
+  .voting-closed-banner.hidden{ display:none; }
+
+  .nom-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+    max-width:900px;
+    margin:0 auto;
+  }
+  .nom-card{
+    position:relative;
+    background:var(--white);
+    border:1px solid rgba(8,0,93,0.08);
+    border-radius:var(--radius);
+    padding:32px 28px 28px;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    overflow:hidden;
+  }
+  .nom-card::before{
+    content:'';
+    position:absolute;
+    top:0; left:0; right:0;
+    height:3px;
+    background:var(--turquoise);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .3s ease;
+  }
+  .nom-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px rgba(8,0,93,0.12);
+    border-color:transparent;
+  }
+  .nom-card:hover::before{ transform:scaleX(1); }
+
+  .nom-icon{
+    width:46px; height:46px;
+    border-radius:50%;
+    background:var(--bg-soft);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:20px;
+  }
+  .nom-icon svg{ width:22px; height:22px; }
+
+  .nom-card h3{
+    font-family:'Inter', sans-serif;
+    font-weight:700;
+    font-size:1.12rem;
+    letter-spacing:0;
+    text-transform:none;
+    color:var(--text);
+    margin-bottom:8px;
+  }
+  .nom-card p{
+    font-size:0.92rem;
+    color:var(--text-soft);
+  }
+
+  .nom-vote{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    margin-top:18px;
+    padding-top:16px;
+    border-top:1px solid rgba(8,0,93,0.08);
+  }
+  .nom-vote-count{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:1.6rem;
+    color:var(--navy);
+  }
+  .nom-vote-count-label{
+    font-family:'Oswald', sans-serif;
+    font-size:0.66rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--text-soft);
+    display:block;
+  }
+  .nom-vote-btn{
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:0.76rem;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    padding:9px 18px;
+    border-radius:999px;
+    border:2px solid var(--turquoise);
+    background:transparent;
+    color:var(--turquoise-dark);
+    cursor:pointer;
+    transition:background .2s ease, color .2s ease, transform .2s ease;
+    white-space:nowrap;
+  }
+  .nom-vote-btn:hover:not(:disabled){
+    background:var(--turquoise);
+    color:var(--navy-deep);
+    transform:translateY(-1px);
+  }
+  .nom-vote-btn:disabled{ cursor:default; opacity:0.65; transform:none; }
+  .nom-vote-btn.voted{
+    background:var(--turquoise);
+    color:var(--navy-deep);
+    border-color:var(--turquoise);
+    opacity:1;
+  }
+
+  /* ---------- CANDIDATE MODAL ---------- */
+  .candidate-modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(5,0,65,0.6);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    z-index:100;
+  }
+  .candidate-modal-overlay.hidden{ display:none; }
+  .candidate-modal{
+    background:var(--white);
+    border-radius:var(--radius);
+    max-width:520px;
+    width:100%;
+    max-height:min(600px, 85vh);
+    overflow-y:auto;
+    padding:28px;
+    position:relative;
+  }
+  .candidate-modal-close{
+    position:absolute;
+    top:18px; right:18px;
+    width:32px; height:32px;
+    border:none;
+    background:var(--bg-soft);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    color:var(--navy);
+  }
+  .candidate-modal-close svg{ width:16px; height:16px; }
+  .candidate-modal-eyebrow{
+    color:var(--turquoise-dark);
+    display:block;
+    margin-bottom:6px;
+  }
+  .candidate-modal h3{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:1.8rem;
+    color:var(--navy);
+    margin-bottom:20px;
+    padding-right:32px;
+  }
+  .candidate-row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:12px 0;
+    border-top:1px solid rgba(8,0,93,0.08);
+  }
+  .candidate-row:first-of-type{ border-top:none; }
+  .candidate-thumb{
+    flex:none;
+    width:64px; height:64px;
+    border-radius:10px;
+    background:linear-gradient(135deg, var(--navy) 0%, var(--turquoise-dark) 100%);
+    display:flex; align-items:center; justify-content:center;
+    position:relative;
+  }
+  .candidate-thumb svg{ width:20px; height:20px; fill:rgba(255,255,255,0.85); }
+  .candidate-thumb[data-video-url]{ cursor:pointer; }
+  .candidate-thumb[data-video-url]:hover{ filter:brightness(1.15); }
+  .candidate-thumb-photo{ background:none; overflow:hidden; }
+  .candidate-thumb-photo img{ width:100%; height:100%; object-fit:cover; }
+  .candidate-info{ flex:1; min-width:0; }
+  .candidate-video-link{
+    background:none; border:none; padding:0; margin:0;
+    font-size:0.76rem; color:var(--turquoise-dark);
+    text-decoration:underline; cursor:pointer; font-family:inherit;
+  }
+  .video-lightbox{
+    max-width:min(720px, 90vw);
+    width:100%;
+    padding:0;
+    background:#000;
+    border-radius:14px;
+    overflow:hidden;
+  }
+  .video-lightbox video{
+    display:block;
+    width:100%;
+    max-height:80vh;
+    background:#000;
+  }
+  .how-it-works-steps{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+    margin-top:6px;
+  }
+  .how-it-works-step{
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .how-it-works-num{
+    flex:none;
+    width:34px; height:34px;
+    border-radius:50%;
+    background:var(--navy);
+    color:var(--white);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Bebas Neue', sans-serif;
+    font-size:1.1rem;
+  }
+  .how-it-works-step h5{
+    font-family:'Inter', sans-serif;
+    font-weight:700;
+    font-size:0.98rem;
+    color:var(--text);
+    margin-bottom:4px;
+  }
+  .how-it-works-step p{
+    font-size:0.88rem;
+    color:var(--text-soft);
+  }
+  .video-lightbox .candidate-modal-close{
+    background:rgba(0,0,0,0.55);
+    color:#fff;
+  }
+  .candidate-name{
+    font-family:'Inter', sans-serif;
+    font-weight:700;
+    font-size:0.98rem;
+    color:var(--text);
+  }
+  .candidate-video-note{
+    font-size:0.76rem;
+    color:var(--text-soft);
+  }
+  .candidate-vote-btn{
+    flex:none;
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:0.74rem;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    padding:9px 16px;
+    border-radius:999px;
+    border:2px solid var(--turquoise);
+    background:transparent;
+    color:var(--turquoise-dark);
+    cursor:pointer;
+    white-space:nowrap;
+    transition:background .2s ease, color .2s ease;
+  }
+  .candidate-vote-btn:hover:not(:disabled){
+    background:var(--turquoise);
+    color:var(--navy-deep);
+  }
+  .candidate-vote-btn:disabled{ cursor:default; opacity:0.5; }
+  .candidate-vote-btn.voted{
+    background:var(--turquoise);
+    color:var(--navy-deep);
+    border-color:var(--turquoise);
+    opacity:1;
+  }
+  .candidate-back-btn{
+    display:block;
+    background:none;
+    border:none;
+    color:var(--turquoise-dark);
+    font-family:'Oswald', sans-serif;
+    font-size:0.78rem;
+    font-weight:600;
+    letter-spacing:0.02em;
+    text-transform:uppercase;
+    cursor:pointer;
+    padding:0 0 14px;
+  }
+  .candidate-back-btn:hover{ text-decoration:underline; }
+
+  .rank-select{
+    flex:none;
+    width:64px;
+    padding:9px 6px;
+    border-radius:8px;
+    border:1px solid rgba(8,0,93,0.18);
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    text-align:center;
+    color:var(--navy);
+  }
+  .rank-select:disabled{ opacity:0.6; }
+  .rank-select-dupe{ border-color:#c0392b; color:#c0392b; }
+
+  .moment-upload{
+    margin-top:18px;
+    padding-top:16px;
+    border-top:1px dashed rgba(8,0,93,0.15);
+  }
+  .moment-upload .auth-input{ margin-bottom:10px; }
+
+  /* ---------- AUTH ---------- */
+  .auth-status{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Oswald', sans-serif;
+    font-size:0.8rem;
+    color:var(--navy);
+    white-space:nowrap;
+  }
+  .auth-status button{
+    font-family:'Oswald', sans-serif;
+    font-size:0.8rem;
+    font-weight:600;
+    letter-spacing:0.02em;
+    text-transform:uppercase;
+    background:none;
+    border:none;
+    color:var(--turquoise-dark);
+    cursor:pointer;
+    padding:0;
+  }
+  .auth-status button:hover{ text-decoration:underline; }
+  .auth-status .auth-email{ color:var(--text-soft); font-size:0.78rem; }
+
+  .auth-status-mobile{
+    padding:16px 32px;
+    border-top:1px solid rgba(8,0,93,0.06);
+    font-size:0.92rem;
+  }
+  .auth-status-mobile button{ font-size:0.85rem; }
+
+  .account-menu{ position:relative; }
+  .account-toggle{ white-space:nowrap; }
+  .account-dropdown{
+    position:absolute;
+    top:calc(100% + 10px);
+    left:0;
+    background:var(--white);
+    border-radius:10px;
+    box-shadow:0 16px 32px rgba(8,0,93,0.18);
+    padding:12px;
+    min-width:220px;
+    z-index:60;
+  }
+  .account-dropdown.hidden{ display:none; }
+  .account-email{
+    font-size:0.78rem;
+    color:var(--text-soft);
+    padding:4px 8px 10px;
+    border-bottom:1px solid rgba(8,0,93,0.08);
+    margin-bottom:6px;
+    word-break:break-all;
+  }
+  .account-dropdown-item{
+    display:block;
+    width:100%;
+    text-align:left;
+    padding:8px !important;
+    border-radius:6px;
+  }
+  .account-dropdown-item:hover{ background:var(--bg-soft); text-decoration:none !important; }
+
+  .auth-modal h3{ font-size:1.6rem; margin-bottom:18px; }
+  .auth-tabs{
+    display:flex;
+    gap:8px;
+    margin-bottom:18px;
+    padding-right:32px;
+  }
+  .admin-nom-tabs, .admin-subcat-tabs{
+    flex-wrap:wrap;
+    padding-right:0;
+    margin-bottom:10px;
+  }
+  .admin-nom-tabs .auth-tab, .admin-subcat-tabs .auth-tab{
+    flex:none;
+    padding:8px 14px;
+  }
+  .auth-tab{
+    flex:1;
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:0.78rem;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    padding:10px;
+    border-radius:999px;
+    border:2px solid rgba(8,0,93,0.15);
+    background:transparent;
+    color:var(--text-soft);
+    cursor:pointer;
+  }
+  .auth-tab.active{
+    border-color:var(--turquoise);
+    color:var(--navy);
+    background:var(--bg-soft);
+  }
+  .auth-label{
+    display:block;
+    font-family:'Oswald', sans-serif;
+    font-size:0.72rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--text-soft);
+    margin-bottom:14px;
+  }
+  .auth-input{
+    display:block;
+    width:100%;
+    margin-top:6px;
+    padding:11px 14px;
+    border-radius:10px;
+    border:1px solid rgba(8,0,93,0.18);
+    font-family:'Inter', sans-serif;
+    font-size:0.92rem;
+    color:var(--text);
+  }
+  .auth-input:focus{ outline:2px solid var(--turquoise); outline-offset:1px; }
+  .auth-message{
+    font-size:0.84rem;
+    margin-bottom:14px;
+    min-height:1.2em;
+  }
+  .auth-message.error{ color:#c0392b; }
+  .auth-message.success{ color:#0090AD; }
+  .auth-submit{ width:100%; }
+
+  /* ---------- ADMIN ---------- */
+  .admin-modal{ max-width:600px; }
+  .admin-modal h3{ font-size:1.6rem; margin-bottom:18px; }
+  .voting-toggle-row{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Oswald', sans-serif;
+    font-size:0.82rem;
+    color:var(--navy);
+    margin-bottom:18px;
+    cursor:pointer;
+  }
+  .voting-toggle-row input{ width:16px; height:16px; }
+  .admin-section-title{
+    font-family:'Oswald', sans-serif;
+    font-size:0.78rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--turquoise-dark);
+    margin:22px 0 12px;
+  }
+  .admin-stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(120px, 1fr));
+    gap:12px;
+  }
+  .admin-stat-tile{
+    background:var(--bg-soft);
+    border-radius:10px;
+    padding:14px;
+    text-align:center;
+  }
+  .admin-stat-num{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:1.9rem;
+    color:var(--navy);
+    display:block;
+  }
+  .admin-stat-label{
+    font-family:'Oswald', sans-serif;
+    font-size:0.66rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--text-soft);
+  }
+  .news-form textarea.auth-input{ resize:vertical; }
+  .news-form > * + *{ margin-top:12px; }
+  .admin-news-item{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:12px;
+    padding:12px 0;
+    border-top:1px solid rgba(8,0,93,0.08);
+  }
+  .admin-news-item-body h5{
+    font-family:'Inter', sans-serif;
+    font-size:0.9rem;
+    font-weight:700;
+    color:var(--text);
+    margin-bottom:2px;
+  }
+  .admin-news-item-body p{ font-size:0.8rem; color:var(--text-soft); }
+  .admin-news-delete{
+    flex:none;
+    background:none;
+    border:none;
+    color:#c0392b;
+    font-family:'Oswald', sans-serif;
+    font-size:0.72rem;
+    font-weight:600;
+    text-transform:uppercase;
+    cursor:pointer;
+  }
+  .admin-news-delete:hover{ text-decoration:underline; }
+
+  .see-all{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Oswald', sans-serif;
+    font-size:0.85rem;
+    font-weight:600;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    color:var(--navy);
+    white-space:nowrap;
+  }
+  .see-all svg{ width:16px; height:16px; transition:transform .2s ease; }
+  .see-all:hover svg{ transform:translateX(4px); }
+
+  /* ---------- NEWS ---------- */
+  .news{ background:var(--bg-soft); }
+  .news-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+  }
+  .news-card{
+    background:var(--white);
+    border-radius:var(--radius);
+    overflow:hidden;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .news-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px rgba(8,0,93,0.1);
+  }
+  .news-thumb{
+    height:150px;
+    background:linear-gradient(135deg, var(--navy) 0%, var(--turquoise-dark) 100%);
+    position:relative;
+  }
+  .news-thumb::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+      repeating-linear-gradient(115deg, rgba(255,255,255,0.06) 0 2px, transparent 2px 26px);
+  }
+  .news-body{ padding:22px 24px 26px; }
+  .news-tag{
+    font-family:'Oswald', sans-serif;
+    font-size:0.7rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--turquoise-dark);
+    margin-bottom:10px;
+    display:block;
+  }
+  .news-body h3{
+    font-family:'Inter', sans-serif;
+    font-weight:700;
+    letter-spacing:0;
+    text-transform:none;
+    font-size:1.05rem;
+    margin-bottom:8px;
+  }
+  .news-body p{ font-size:0.88rem; color:var(--text-soft); margin-bottom:14px; }
+  .news-date{ font-size:0.78rem; color:var(--text-soft); }
+
+  /* ---------- JURY ---------- */
+  .jury-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+    gap:24px;
+    max-width:900px;
+    margin:0 auto;
+  }
+  .jury-card{ text-align:center; }
+  .jury-photo{
+    width:120px; height:120px;
+    border-radius:50%;
+    margin:0 auto 14px;
+    background:linear-gradient(135deg, var(--navy) 0%, var(--turquoise-dark) 100%);
+    background-size:cover;
+    background-position:center;
+  }
+  .jury-card h3{
+    font-family:'Inter', sans-serif;
+    font-weight:700;
+    font-size:1rem;
+    letter-spacing:0;
+    text-transform:none;
+    color:var(--text);
+  }
+  .jury-card p{ font-size:0.85rem; color:var(--text-soft); }
+
+  /* ---------- MERCH ---------- */
+  .merch-card{
+    display:flex;
+    flex-wrap:wrap;
+    background:var(--bg-soft);
+    border-radius:var(--radius);
+    overflow:hidden;
+    max-width:820px;
+    margin:0 auto;
+  }
+  .merch-photo{ flex:1 1 320px; min-height:280px; background:var(--bg-soft); }
+  .merch-photo img{ width:100%; height:100%; min-height:280px; object-fit:contain; }
+  .merch-info{
+    flex:1 1 280px;
+    padding:36px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:center;
+    gap:10px;
+  }
+  .merch-info h3{
+    font-family:'Inter', sans-serif;
+    font-weight:700;
+    font-size:1.3rem;
+    color:var(--text);
+  }
+  .merch-info p{ font-size:0.92rem; color:var(--text-soft); }
+  .merch-price{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:1.8rem;
+    color:var(--navy);
+    margin:6px 0 4px;
+  }
+  .merch-preorder-counter{
+    display:inline-block;
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:0.78rem;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    color:var(--turquoise-dark);
+    background:rgba(0,184,217,0.1);
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:14px;
+  }
+
+  /* ---------- MERCH AD POPUP ---------- */
+  .merch-ad-modal{
+    position:relative;
+    max-width:440px;
+    width:100%;
+    background:linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 70%, #030027 100%);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,0.45), 0 0 0 1px rgba(242,183,5,0.25);
+  }
+  .merch-ad-close{
+    position:absolute;
+    top:14px; right:14px;
+    z-index:3;
+    width:34px; height:34px;
+    border-radius:50%;
+    border:none;
+    background:rgba(0,0,0,0.45);
+    color:rgba(255,255,255,0.9);
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:0.85rem;
+    display:flex; align-items:center; justify-content:center;
+    cursor:not-allowed;
+    transition:background .2s ease;
+  }
+  .merch-ad-close:not(:disabled){
+    cursor:pointer;
+    background:rgba(0,0,0,0.6);
+  }
+  .merch-ad-close:not(:disabled):hover{ background:rgba(0,0,0,0.8); }
+  .merch-ad-photo{
+    background:var(--bg-soft);
+    aspect-ratio:16/10;
+  }
+  .merch-ad-photo img{ width:100%; height:100%; object-fit:contain; display:block; }
+  .merch-ad-body{ padding:24px 28px 28px; text-align:center; }
+  .merch-ad-badge{
+    display:inline-block;
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:0.7rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--navy-deep);
+    background:var(--gold);
+    padding:4px 12px;
+    border-radius:999px;
+    margin-bottom:12px;
+  }
+  .merch-ad-body h3{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:1.7rem;
+    color:var(--white);
+    margin-bottom:10px;
+  }
+  .merch-ad-body p{
+    font-size:0.88rem;
+    color:rgba(255,255,255,0.72);
+    margin-bottom:16px;
+  }
+  .merch-ad-price{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:2rem;
+    color:var(--turquoise);
+    margin-bottom:10px;
+  }
+  .merch-ad-price span{
+    font-family:'Inter', sans-serif;
+    font-size:0.78rem;
+    font-weight:400;
+    color:rgba(255,255,255,0.55);
+  }
+  .merch-ad-modal .merch-preorder-counter{
+    background:rgba(0,184,217,0.16);
+    color:var(--turquoise);
+    display:block;
+    margin:0 auto 18px;
+    width:fit-content;
+  }
+  .merch-ad-body .btn{ width:100%; }
+
+  /* ---------- ABOUT / VIDEO ---------- */
+  .about-video{
+    max-width:900px;
+    margin:0 auto;
+    aspect-ratio:16/9;
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:var(--navy-deep);
+    box-shadow:0 20px 50px rgba(8,0,93,0.18);
+  }
+  .about-video video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  /* ---------- CTA BAND ---------- */
+  .cta-band{
+    background:var(--navy);
+    color:var(--white);
+    text-align:center;
+    padding:90px 0;
+    position:relative;
+    overflow:hidden;
+  }
+  .cta-band h2{
+    font-size:clamp(2.4rem, 5vw, 3.6rem);
+    margin-bottom:18px;
+  }
+  .cta-band p{
+    color:rgba(255,255,255,0.68);
+    max-width:480px;
+    margin:0 auto 34px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--navy-deep);
+    color:rgba(255,255,255,0.7);
+    padding:56px 0 28px;
+  }
+  .footer-top{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:40px;
+    padding-bottom:40px;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .footer-brand img{ height:40px; filter:brightness(0) invert(1); margin-bottom:14px; }
+  .footer-brand p{ max-width:280px; font-size:0.88rem; color:rgba(255,255,255,0.5); }
+
+  .footer-col h4{
+    font-family:'Oswald', sans-serif;
+    font-size:0.78rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--white);
+    margin-bottom:16px;
+  }
+  .footer-col ul{ list-style:none; display:flex; flex-direction:column; gap:10px; }
+  .footer-col a{ font-size:0.9rem; color:rgba(255,255,255,0.65); transition:color .2s ease; }
+  .footer-col a:hover{ color:var(--turquoise); }
+
+  .footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-top:24px;
+    font-size:0.8rem;
+    color:rgba(255,255,255,0.4);
+    flex-wrap:wrap;
+    gap:12px;
+  }
+
+  .social-row{ display:flex; gap:14px; }
+  .social-row a{
+    width:36px; height:36px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,0.2);
+    display:flex; align-items:center; justify-content:center;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .social-row a:hover{ border-color:var(--turquoise); background:rgba(0,184,217,0.12); }
+  .social-row svg{ width:16px; height:16px; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 1099px){
+    nav{ display:none; }
+    .nav-right .auth-status{ display:none; }
+    .nav-toggle{ display:flex; }
+  }
+  @media (max-width: 860px){
+    .stats-grid{ grid-template-columns:1fr; row-gap:32px; }
+    .stat + .stat{ border-left:none; border-top:1px solid rgba(8,0,93,0.1); padding-top:24px; }
+    .nom-grid, .news-grid{ grid-template-columns:1fr; }
+    .footer-top{ flex-direction:column; }
+  }
+  @media (min-width: 1100px){
+    .auth-status-mobile{ display:none; }
+  }
+
+  :focus-visible{
+    outline:3px solid var(--turquoise);
+    outline-offset:2px;
+  }
+</style>
+</head>
+<body>
+
+  <header id="siteHeader">
+    <div class="nav-wrap">
+      <div class="brand-group">
+        <a href="#" class="brand">
+          <span class="brand-logotype">RWPA<span>AWARDS</span></span>
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Главная</a></li>
+          <li><a href="#nominations">Номинации</a></li>
+          <li><a href="#results">Результаты</a></li>
+          <li><a href="#jury">Жюри</a></li>
+          <li><a href="#news">Новости</a></li>
+          <li><a href="#merch">Мерч</a></li>
+          <li><a href="#about">О премии</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="nav-right">
+        <div class="auth-status" id="authStatus"><button type="button" class="auth-login-btn">Войти</button></div>
+        <a href="#nominations" class="btn btn-primary btn-sm">Голосовать</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Открыть меню">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <div class="auth-status auth-status-mobile" id="authStatusMobile"><button type="button" class="auth-login-btn">Войти</button></div>
+      <ul>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#nominations">Номинации</a></li>
+        <li><a href="#results">Результаты</a></li>
+        <li><a href="#jury">Жюри</a></li>
+        <li><a href="#news">Новости</a></li>
+        <li><a href="#merch">Мерч</a></li>
+        <li><a href="#about">О премии</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero">
+    <svg class="hero-ball" viewBox="0 0 1910 1182" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1038.33 575.65C1023.59 578.976 1008.58 581.629 993.534 583.29C951.061 587.973 908.167 585.23 866.615 575.46C863.355 564.817 861.461 553.524 862.842 542.354C871.25 540.755 879.81 539.413 888.313 538.331C921.932 534.051 955.996 532.656 989.79 535.427C1007.19 536.855 1024.59 539.36 1041.76 542.293L1042.17 542.838C1043.4 553.899 1041.71 565.121 1038.33 575.65Z" fill="white"/>
+      <circle cx="954" cy="565" r="230" fill="white" opacity="0.9"/>
+    </svg>
+
+    <div class="hero-inner">
+      <span class="eyebrow">Ватерпольная премия · Сезон 2026</span>
+      <h1>RWPA <span>AWARDS</span></h1>
+      <p class="lead">Ежегодное признание лучших игроков, тренеров и команд сезона. Три номинации — одна ночь, где решается, кто был сильнее всех в бассейне.</p>
+      <div class="hero-cta">
+        <a href="#nominations" class="btn btn-primary">Смотреть номинации</a>
+        <button type="button" class="btn btn-outline" id="howItWorksBtn">Как проходит голосование</button>
+      </div>
+      <a href="#merch" class="hero-merch-promo">
+        <span class="hero-merch-promo-badge">Новинка</span>
+        <span>Официальный мерч RWPA Awards — предзаказ со скидкой 5% на следующий заказ</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <div class="wave-divider">
+      <svg viewBox="0 0 1600 120" preserveAspectRatio="none">
+        <path class="wave-track" d="M0,60 C 200,120 400,0 600,60 C 800,120 1000,0 1200,60 C 1400,120 1600,0 1800,60 C 2000,120 2200,0 2400,60 L2400,120 L0,120 Z" fill="#F4F6FB" transform="translate(-400,0)"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat">
+        <span class="stat-num">3</span>
+        <div class="stat-label">Номинации</div>
+      </div>
+      <div class="stat">
+        <span class="stat-num">268</span>
+        <div class="stat-label">Участников в прошлом году</div>
+      </div>
+      <div class="stat">
+        <span class="stat-num">02</span>
+        <div class="stat-label">Сезон премии</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="nominations">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Номинации сезона</span>
+          <h2>Категории, один&nbsp;финал</h2>
+        </div>
+      </div>
+
+      <div class="voting-closed-banner hidden" id="votingClosedBanner">Голосование пока закрыто — оно откроется ближе к церемонии.</div>
+
+      <div class="nom-grid" id="nomGrid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="results">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Итоги сезона</span>
+          <h2>Результаты</h2>
+        </div>
+      </div>
+
+      <div class="voting-closed-banner" id="resultsClosedBanner">Результаты появятся здесь после подведения итогов.</div>
+
+      <div id="resultsContent" class="hidden">
+        <div class="auth-tabs admin-nom-tabs" id="resultsNomTabs"></div>
+        <div class="auth-tabs admin-subcat-tabs" id="resultsSubcatTabs"></div>
+        <div id="resultsList" style="max-width:600px;margin:0 auto;"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="jury">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Кто оценивает</span>
+          <h2>Жюри премии</h2>
+        </div>
+      </div>
+
+      <div class="jury-grid" id="juryGrid"></div>
+    </div>
+  </section>
+
+  <section class="section news" id="news">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Новости премии</span>
+          <h2>Что происходит прямо сейчас</h2>
+        </div>
+      </div>
+
+      <div class="news-grid" id="newsGrid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="merch">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Мерч</span>
+          <h2>Форма премии</h2>
+        </div>
+      </div>
+
+      <div class="merch-card">
+        <div class="merch-photo">
+          <img src="merch-tshirt.jpg" alt="Футболка RWPA Awards">
+        </div>
+        <div class="merch-info">
+          <h3>Футболка RWPA Awards</h3>
+          <p>Официальная футболка премии с принтом логотипа.</p>
+          <span class="merch-price">2 500 ₽ / шт</span>
+          <div class="merch-preorder-counter" id="merchPreorderCounter">0/35 предзаказов</div>
+          <p class="candidate-video-note" style="margin-bottom:6px;">Доставка не включена в стоимость и оплачивается отдельно.</p>
+          <p class="candidate-video-note" style="margin-bottom:14px;">Оформившие предзаказ получат скидку 5% на следующий заказ — можно использовать и в следующем году.</p>
+          <a class="btn btn-primary" href="https://t.me/RWPA_Admin" target="_blank" rel="noopener">Заказать в Telegram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">О премии</span>
+          <h2>Что такое RWPA Awards</h2>
+        </div>
+      </div>
+
+      <div class="about-video">
+        <video src="rwpa-video.mp4" controls preload="metadata" playsinline></video>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wave-divider" style="position:absolute; top:-1px; left:0; right:0; transform:rotate(180deg);">
+      <svg viewBox="0 0 1600 120" preserveAspectRatio="none">
+        <path class="wave-track" d="M0,60 C 200,120 400,0 600,60 C 800,120 1000,0 1200,60 C 1400,120 1600,0 1800,60 C 2000,120 2200,0 2400,60 L2400,120 L0,120 Z" fill="var(--bg-soft)" transform="translate(-400,0)"/>
+      </svg>
+    </div>
+    <div class="container">
+      <h2>Голосование открыто</h2>
+      <p>Отдайте голос за своих кандидатов в 3 номинациях до закрытия сезона.</p>
+      <a href="#nominations" class="btn btn-primary">Проголосовать сейчас</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="brand-logotype footer-logotype">RWPA<span>AWARDS</span></span>
+          <p>Ежегодная премия, отмечающая лучших игроков, тренеров и команды сезона в водном поло.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Премия</h4>
+          <ul>
+            <li><a href="#nominations">Номинации</a></li>
+            <li><a href="#">Результаты</a></li>
+            <li><a href="#about">О премии</a></li>
+          </ul>
+        </div>
+        <div class="footer-col" id="contacts">
+          <h4>Контакты</h4>
+          <ul>
+            <li><a href="#news">Новости</a></li>
+            <li><a href="https://t.me/RWPA_Admin" target="_blank" rel="noopener">Telegram — @RWPA_Admin</a></li>
+            <li><a href="tel:+79117172990">+7 911 717-29-90</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Мы в соцсетях</h4>
+          <ul>
+            <li><a href="https://t.me/WpGranados" target="_blank" rel="noopener">Граната от Гранадоса</a></li>
+            <li><a href="https://t.me/vargashook" target="_blank" rel="noopener">Хук Варги</a></li>
+            <li><a href="https://t.me/fizikawp" target="_blank" rel="noopener">Мы - водное поло</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 RWPA Awards. Все права защищены.</span>
+        <span>Сделано для сообщества водного поло</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="candidate-modal-overlay hidden" id="candidateModalOverlay">
+    <div class="candidate-modal" role="dialog" aria-modal="true" aria-labelledby="candidateModalTitle">
+      <button class="candidate-modal-close" id="candidateModalClose" type="button" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <span class="eyebrow candidate-modal-eyebrow">Выберите кандидата</span>
+      <h3 id="candidateModalTitle"></h3>
+      <div id="candidateModalList"></div>
+    </div>
+  </div>
+
+  <div class="candidate-modal-overlay hidden" id="howItWorksOverlay">
+    <div class="candidate-modal" role="dialog" aria-modal="true" aria-labelledby="howItWorksTitle">
+      <button class="candidate-modal-close" id="howItWorksClose" type="button" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <span class="eyebrow candidate-modal-eyebrow" style="color:var(--navy);">Как это работает</span>
+      <h3 id="howItWorksTitle">Как проходит голосование</h3>
+      <div class="how-it-works-steps">
+        <div class="how-it-works-step">
+          <span class="how-it-works-num">1</span>
+          <div>
+            <h5>Игроки отправляют моменты</h5>
+            <p>Участники присылают видео своих лучших моментов сезона через форму — с ФИО и контактом для связи.</p>
+          </div>
+        </div>
+        <div class="how-it-works-step">
+          <span class="how-it-works-num">2</span>
+          <div>
+            <h5>Первичный отсев</h5>
+            <p>Администраторы премии отсматривают все заявки и отбирают сильнейшие моменты в каждой номинации.</p>
+          </div>
+        </div>
+        <div class="how-it-works-step">
+          <span class="how-it-works-num">3</span>
+          <div>
+            <h5>Жюри оценивает</h5>
+            <p>Эксперты жюри просматривают отобранные моменты и определяют победителей в каждой номинации.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="candidate-modal-overlay hidden" id="merchAdOverlay">
+    <div class="merch-ad-modal" role="dialog" aria-modal="true" aria-labelledby="merchAdTitle">
+      <button class="merch-ad-close" id="merchAdClose" type="button" aria-label="Закрыть" disabled>
+        <span id="merchAdCloseLabel">5</span>
+      </button>
+      <div class="merch-ad-photo">
+        <img src="merch-tshirt.jpg" alt="Футболка RWPA Awards">
+      </div>
+      <div class="merch-ad-body">
+        <span class="merch-ad-badge">🔥 Новый мерч</span>
+        <h3 id="merchAdTitle">Официальная футболка RWPA Awards</h3>
+        <p>Оформи предзаказ сейчас — получишь скидку 5% на следующий заказ. Скидку можно использовать и в следующем сезоне.</p>
+        <div class="merch-ad-price">2 500 ₽ <span>/ шт, доставка отдельно</span></div>
+        <div class="merch-preorder-counter" id="merchAdPreorderCounter">0/35 предзаказов</div>
+        <a class="btn btn-primary" href="https://t.me/RWPA_Admin" target="_blank" rel="noopener" id="merchAdCta">Заказать в Telegram</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="candidate-modal-overlay hidden" id="videoLightboxOverlay">
+    <div class="candidate-modal video-lightbox" role="dialog" aria-modal="true">
+      <button class="candidate-modal-close" id="videoLightboxClose" type="button" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <video id="videoLightboxPlayer" controls playsinline></video>
+    </div>
+  </div>
+
+  <div class="candidate-modal-overlay hidden" id="authModalOverlay">
+    <div class="candidate-modal auth-modal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+      <button class="candidate-modal-close" id="authModalClose" type="button" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="authTabLogin" type="button">Вход</button>
+        <button class="auth-tab" id="authTabSignup" type="button">Регистрация</button>
+      </div>
+      <h3 id="authModalTitle">Войдите, чтобы голосовать</h3>
+      <form id="authForm">
+        <label class="auth-label">Email
+          <input class="auth-input" id="authEmail" type="email" required autocomplete="email">
+        </label>
+        <label class="auth-label">Пароль
+          <input class="auth-input" id="authPassword" type="password" required minlength="6" autocomplete="current-password">
+        </label>
+        <label class="auth-label hidden" id="authTelegramLabel">Telegram username или телефон для связи
+          <input class="auth-input" id="authTelegram" type="text" placeholder="@username или +7...">
+        </label>
+        <button type="button" class="candidate-back-btn" id="forgotPasswordBtn" style="padding-bottom:14px;">Забыли пароль?</button>
+        <div id="authCaptcha" style="margin-bottom:14px;"></div>
+        <div class="auth-message" id="authMessage"></div>
+        <button class="btn btn-primary auth-submit" id="authSubmit" type="submit">Войти</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="candidate-modal-overlay hidden" id="resetPasswordModalOverlay">
+    <div class="candidate-modal auth-modal" role="dialog" aria-modal="true" aria-labelledby="resetPasswordTitle">
+      <button class="candidate-modal-close" id="resetPasswordClose" type="button" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h3 id="resetPasswordTitle">Новый пароль</h3>
+      <form id="resetPasswordForm">
+        <label class="auth-label">Новый пароль
+          <input class="auth-input" id="newPassword" type="password" required minlength="6" autocomplete="new-password">
+        </label>
+        <div class="auth-message" id="resetPasswordMessage"></div>
+        <button class="btn btn-primary auth-submit" type="submit">Сохранить пароль</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="candidate-modal-overlay hidden" id="confirmEmailModalOverlay">
+    <div class="candidate-modal auth-modal" role="dialog" aria-modal="true" aria-labelledby="confirmEmailTitle">
+      <button class="candidate-modal-close" id="confirmEmailClose" type="button" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h3 id="confirmEmailTitle">Подтвердите email</h3>
+      <p class="candidate-video-note" style="margin-bottom:14px;">Чтобы голосовать, подтверди адрес почты — мы отправили ссылку на <span id="confirmEmailAddress"></span> при регистрации. Проверь папку «Спам», если письма не видно.</p>
+      <div id="confirmEmailCaptcha" style="margin-bottom:14px;"></div>
+      <div class="auth-message" id="confirmEmailMessage"></div>
+      <button class="btn btn-primary auth-submit" type="button" id="resendConfirmEmailBtn">Отправить письмо ещё раз</button>
+    </div>
+  </div>
+
+  <div class="candidate-modal-overlay hidden" id="adminModalOverlay">
+    <div class="candidate-modal admin-modal" role="dialog" aria-modal="true" aria-labelledby="adminModalTitle">
+      <button class="candidate-modal-close" id="adminModalClose" type="button" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <span class="eyebrow candidate-modal-eyebrow">Панель администратора</span>
+      <h3 id="adminModalTitle">Статистика и новости</h3>
+
+      <label class="voting-toggle-row">
+        <input type="checkbox" id="adminVotingToggle">
+        Голосование открыто для всех
+      </label>
+      <label class="voting-toggle-row">
+        <input type="checkbox" id="adminResultsToggle">
+        Результаты опубликованы
+      </label>
+      <label class="auth-label" style="max-width:220px;margin-bottom:18px;">Предзаказов мерча (из 35)
+        <input class="auth-input" type="number" id="adminMerchPreorders" min="0">
+      </label>
+
+      <button type="button" class="admin-news-delete" id="adminResetVotesBtn" style="margin-bottom:18px;">Обнулить все голоса</button>
+
+      <div class="admin-stats" id="adminStats"></div>
+
+      <h4 class="admin-section-title">Добавить момент вручную</h4>
+      <p class="candidate-video-note" style="margin-bottom:14px;">Игроки присылают свои моменты через Google-форму — отсмотри их там, а сюда добавляй только те, что прошли отбор.</p>
+      <form id="addMomentForm" class="news-form">
+        <select class="auth-input" id="addMomentSubcat" required></select>
+        <input class="auth-input" id="addMomentName" type="text" placeholder="Название / номер (например, Момент 1)" required>
+        <input class="auth-input" id="addMomentUrl" type="text" placeholder="Ссылка на видео">
+        <label class="auth-label">Или загрузить файл с компьютера (заменит ссылку выше)
+          <input class="auth-input" id="addMomentFile" type="file" accept="video/*">
+        </label>
+        <div class="auth-message" id="addMomentMessage"></div>
+        <button class="btn btn-primary auth-submit" type="submit">Добавить в голосование</button>
+      </form>
+
+      <h4 class="admin-section-title">Добавить тренера</h4>
+      <form id="addCoachForm" class="news-form">
+        <select class="auth-input" id="addCoachSubcat" required></select>
+        <input class="auth-input" id="addCoachName" type="text" placeholder="Имя тренера" required>
+        <label class="auth-label">Фото тренера
+          <input class="auth-input" id="addCoachPhoto" type="file" accept="image/*" required>
+        </label>
+        <div class="auth-message" id="addCoachMessage"></div>
+        <button class="btn btn-primary auth-submit" type="submit">Добавить в голосование</button>
+      </form>
+
+      <h4 class="admin-section-title">Голоса по подкатегориям</h4>
+      <div class="auth-tabs admin-nom-tabs" id="adminNomTabs"></div>
+      <div class="auth-tabs admin-subcat-tabs" id="adminSubcatTabs"></div>
+      <div id="adminSubcatResults"></div>
+
+      <h4 class="admin-section-title">Добавить новость</h4>
+      <form id="newsForm" class="news-form">
+        <input class="auth-input" id="newsTag" type="text" placeholder="Тег (например, Анонс)" required>
+        <input class="auth-input" id="newsTitle" type="text" placeholder="Заголовок" required>
+        <textarea class="auth-input" id="newsDescription" placeholder="Описание" required rows="2"></textarea>
+        <input class="auth-input" id="newsDate" type="text" placeholder="Дата (например, 20 августа 2026)" required>
+        <label class="auth-label">Фото (необязательно)
+          <input class="auth-input" id="newsImage" type="file" accept="image/*">
+        </label>
+        <div class="auth-message" id="newsFormMessage"></div>
+        <button class="btn btn-primary auth-submit" type="submit">Добавить новость</button>
+      </form>
+
+      <h4 class="admin-section-title">Опубликованные новости</h4>
+      <div id="adminNewsList"></div>
+
+      <h4 class="admin-section-title">Добавить в жюри</h4>
+      <form id="juryForm" class="news-form">
+        <input class="auth-input" id="juryName" type="text" placeholder="Имя" required>
+        <input class="auth-input" id="juryRole" type="text" placeholder="Роль (например, экс-игрок сборной)">
+        <label class="auth-label">Фото
+          <input class="auth-input" id="juryPhoto" type="file" accept="image/*">
+        </label>
+        <div class="auth-message" id="juryFormMessage"></div>
+        <button class="btn btn-primary auth-submit" type="submit">Добавить</button>
+      </form>
+
+      <h4 class="admin-section-title">Состав жюри</h4>
+      <div id="adminJuryList"></div>
+    </div>
+  </div>
+
+  <script>
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    const navToggle = document.getElementById('navToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    function closeMobileNav(){
+      mobileNav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+    navToggle.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(open));
+    });
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileNav));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
+
+    const nominationsData = [
+      {
+        slug: 'best-goal',
+        icon: '<path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/>',
+        title: 'Лучший гол',
+        description: 'Самому эффектному и решающему голу сезона.'
+      },
+      {
+        slug: 'best-save',
+        icon: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/>',
+        title: 'Лучший сейв',
+        description: 'За решающий сейв, изменивший ход матча.'
+      },
+      {
+        slug: 'best-coach',
+        icon: '<path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
+        title: 'Лучший тренер',
+        description: 'За стратегию и результат, выведший команду на новый уровень.'
+      }
+    ];
+
+    function renderNominations(){
+      document.getElementById('nomGrid').innerHTML = nominationsData.map(nom => `
+        <div class="nom-card" data-nomination-slug="${nom.slug}">
+          <div class="nom-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#08005D" stroke-width="1.6">${nom.icon}</svg>
+          </div>
+          <h3>${nom.title}</h3>
+          <p>${nom.description}</p>
+        </div>
+      `).join('');
+    }
+
+    renderNominations();
+  </script>
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+    const SUPABASE_URL = 'https://jjgnhaxfzytugvcmkzny.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable__deKzmv-TY9EY0UaKDhewA_bM8kKb_-';
+
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const MAX_MOMENT_VIDEO_MB = 25;
+
+    // Players submit their moments through these Google Forms — admin
+    // reviews there and adds the best ones to voting manually.
+    const MOMENT_FORMS = {
+      'best-goal': 'https://forms.gle/Pe8nsKdVCV3YhtVC6',
+      'best-save': 'https://forms.gle/F2N1HVVoywGBKQHK9'
+    };
+
+    // Supabase Storage object keys reject non-ASCII characters (e.g.
+    // Cyrillic filenames) — always upload under a generated ASCII name and
+    // keep only the (sanitized) original extension.
+    function safeFileName(file){
+      const ext = (file.name.split('.').pop() || 'bin').replace(/[^a-zA-Z0-9]/g, '').slice(0, 10) || 'bin';
+      return `${crypto.randomUUID()}.${ext}`;
+    }
+
+    const widgetsBySlug = new Map();
+    const subcategoriesBySlug = new Map(); // nomination_slug -> [{id, slug, label, sort_order, voting_mode}]
+    const candidatesBySubcat = new Map(); // subcategory_id -> array of candidate rows
+    const myVotedCandidateBySubcat = new Map(); // subcategory_id -> voted candidate_id (single mode)
+    const myRankingsBySubcat = new Map(); // subcategory_id -> Map(candidate_id -> rank) (ranked mode)
+    let candidatesById = new Map();
+    let newsRows = [];
+    let currentSession = null;
+    let pendingSlugAfterAuth = null;
+
+    const modalOverlay = document.getElementById('candidateModalOverlay');
+    const modalTitle = document.getElementById('candidateModalTitle');
+    const modalList = document.getElementById('candidateModalList');
+    const modalClose = document.getElementById('candidateModalClose');
+    let openNomSlug = null;
+    let openSubcatId = null;
+
+    const authStatus = document.getElementById('authStatus');
+    const authStatusMobile = document.getElementById('authStatusMobile');
+    const authModalOverlay = document.getElementById('authModalOverlay');
+    const authModalClose = document.getElementById('authModalClose');
+    const authTabLogin = document.getElementById('authTabLogin');
+    const authTabSignup = document.getElementById('authTabSignup');
+    const authModalTitle = document.getElementById('authModalTitle');
+    const authForm = document.getElementById('authForm');
+    const authEmail = document.getElementById('authEmail');
+    const authPassword = document.getElementById('authPassword');
+    const authMessage = document.getElementById('authMessage');
+    const authSubmit = document.getElementById('authSubmit');
+    let authMode = 'login';
+
+    const forgotPasswordBtn = document.getElementById('forgotPasswordBtn');
+    const resetPasswordModalOverlay = document.getElementById('resetPasswordModalOverlay');
+    const resetPasswordClose = document.getElementById('resetPasswordClose');
+    const resetPasswordForm = document.getElementById('resetPasswordForm');
+    const resetPasswordMessage = document.getElementById('resetPasswordMessage');
+    const newPasswordInput = document.getElementById('newPassword');
+
+    function openResetPasswordModal(){
+      resetPasswordForm.reset();
+      resetPasswordMessage.textContent = '';
+      resetPasswordMessage.className = 'auth-message';
+      resetPasswordModalOverlay.classList.remove('hidden');
+    }
+
+    function closeResetPasswordModal(){
+      resetPasswordModalOverlay.classList.add('hidden');
+    }
+
+    resetPasswordClose.addEventListener('click', closeResetPasswordModal);
+    resetPasswordModalOverlay.addEventListener('click', e => { if (e.target === resetPasswordModalOverlay) closeResetPasswordModal(); });
+
+    const confirmEmailModalOverlay = document.getElementById('confirmEmailModalOverlay');
+    const confirmEmailClose = document.getElementById('confirmEmailClose');
+    const confirmEmailAddress = document.getElementById('confirmEmailAddress');
+    const confirmEmailMessage = document.getElementById('confirmEmailMessage');
+    const resendConfirmEmailBtn = document.getElementById('resendConfirmEmailBtn');
+
+    // GoTrue sets email_confirmed_at once the signup link is clicked; until
+    // then this stays null even though the session itself is valid.
+    function isEmailConfirmed(){
+      return !!(currentSession && currentSession.user && currentSession.user.email_confirmed_at);
+    }
+
+    // Turnstile widgets render explicitly (not via the implicit .cf-turnstile
+    // auto-scan) and only once their container is actually visible — Cloudflare's
+    // widget is known to silently fail to initialize when rendered into a
+    // display:none container, which is what these live in until their modal
+    // opens. That failure mode is especially common on mobile Safari.
+    const TURNSTILE_SITEKEY = '0x4AAAAAAEUUeTVNrVjp1pNB';
+    const turnstileWidgetIds = {};
+
+    function ensureTurnstileReady(cb){
+      if (window.turnstile) { cb(); return; }
+      const t = setInterval(() => {
+        if (window.turnstile) { clearInterval(t); cb(); }
+      }, 100);
+      setTimeout(() => clearInterval(t), 8000);
+    }
+
+    function renderOrResetTurnstile(containerId, onSolved){
+      ensureTurnstileReady(() => {
+        if (turnstileWidgetIds[containerId] !== undefined) {
+          turnstile.reset(turnstileWidgetIds[containerId]);
+        } else {
+          turnstileWidgetIds[containerId] = turnstile.render('#' + containerId, {
+            sitekey: TURNSTILE_SITEKEY,
+            callback: onSolved
+          });
+        }
+      });
+    }
+
+    function openConfirmEmailModal(){
+      if (!currentSession) return;
+      confirmEmailAddress.textContent = currentSession.user.email;
+      confirmEmailMessage.textContent = '';
+      confirmEmailMessage.className = 'auth-message';
+      confirmEmailModalOverlay.classList.remove('hidden');
+      renderOrResetTurnstile('confirmEmailCaptcha', token => {
+        confirmCaptchaToken = token;
+        if (confirmEmailMessage.textContent === 'Подтверди, что ты не робот.') {
+          confirmEmailMessage.textContent = '';
+          confirmEmailMessage.className = 'auth-message';
+        }
+      });
+    }
+
+    function closeConfirmEmailModal(){
+      confirmEmailModalOverlay.classList.add('hidden');
+    }
+
+    confirmEmailClose.addEventListener('click', closeConfirmEmailModal);
+    confirmEmailModalOverlay.addEventListener('click', e => { if (e.target === confirmEmailModalOverlay) closeConfirmEmailModal(); });
+
+    let confirmCaptchaToken = null;
+    function resetConfirmCaptcha(){
+      confirmCaptchaToken = null;
+      if (turnstileWidgetIds.confirmEmailCaptcha !== undefined) turnstile.reset(turnstileWidgetIds.confirmEmailCaptcha);
+    }
+
+    resendConfirmEmailBtn.addEventListener('click', async () => {
+      if (!currentSession) return;
+      if (!confirmCaptchaToken) {
+        confirmEmailMessage.textContent = 'Подтверди, что ты не робот.';
+        confirmEmailMessage.className = 'auth-message error';
+        return;
+      }
+      resendConfirmEmailBtn.disabled = true;
+      const { error } = await supabase.auth.resend({
+        type: 'signup',
+        email: currentSession.user.email,
+        options: { captchaToken: confirmCaptchaToken }
+      });
+      resendConfirmEmailBtn.disabled = false;
+      resetConfirmCaptcha();
+      confirmEmailMessage.textContent = error ? error.message : 'Письмо отправлено — проверь почту.';
+      confirmEmailMessage.className = 'auth-message ' + (error ? 'error' : 'success');
+    });
+
+    forgotPasswordBtn.addEventListener('click', async () => {
+      const email = authEmail.value.trim();
+      if (!email) {
+        authMessage.textContent = 'Сначала введи email.';
+        authMessage.className = 'auth-message error';
+        return;
+      }
+      if (!captchaToken) {
+        authMessage.textContent = 'Подтверди, что ты не робот.';
+        authMessage.className = 'auth-message error';
+        return;
+      }
+      forgotPasswordBtn.disabled = true;
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        captchaToken,
+        redirectTo: window.location.origin + window.location.pathname
+      });
+      forgotPasswordBtn.disabled = false;
+      resetCaptcha();
+      authMessage.className = error ? 'auth-message error' : 'auth-message success';
+      authMessage.textContent = error ? error.message : 'Письмо со ссылкой для сброса пароля отправлено.';
+    });
+
+    resetPasswordForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      const submitBtn = resetPasswordForm.querySelector('.auth-submit');
+      submitBtn.disabled = true;
+      const { error } = await supabase.auth.updateUser({ password: newPasswordInput.value });
+      submitBtn.disabled = false;
+      if (error) {
+        resetPasswordMessage.textContent = error.message;
+        resetPasswordMessage.className = 'auth-message error';
+        return;
+      }
+      resetPasswordMessage.textContent = 'Пароль обновлён.';
+      resetPasswordMessage.className = 'auth-message success';
+      setTimeout(closeResetPasswordModal, 1200);
+    });
+
+    let isAdmin = false;
+    const adminModalOverlay = document.getElementById('adminModalOverlay');
+    const adminModalClose = document.getElementById('adminModalClose');
+    const adminStats = document.getElementById('adminStats');
+    const newsForm = document.getElementById('newsForm');
+    const newsFormMessage = document.getElementById('newsFormMessage');
+    const adminNewsList = document.getElementById('adminNewsList');
+    const addMomentForm = document.getElementById('addMomentForm');
+    const addMomentSubcat = document.getElementById('addMomentSubcat');
+    const addMomentName = document.getElementById('addMomentName');
+    const addMomentUrl = document.getElementById('addMomentUrl');
+    const addMomentFile = document.getElementById('addMomentFile');
+    const addMomentMessage = document.getElementById('addMomentMessage');
+
+    function renderAddMomentSubcatOptions(){
+      const options = [];
+      subcategoriesBySlug.forEach((subs, slug) => {
+        const nomWidget = widgetsBySlug.get(slug);
+        const nomLabel = nomWidget && nomWidget.titleEl ? nomWidget.titleEl.textContent : slug;
+        subs.filter(s => s.voting_mode === 'ranked').forEach(s => {
+          options.push(`<option value="${s.id}">${nomLabel} — ${s.label}</option>`);
+        });
+      });
+      addMomentSubcat.innerHTML = options.join('');
+    }
+
+    addMomentForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      const subcatId = addMomentSubcat.value;
+      const name = addMomentName.value.trim();
+      let video_url = addMomentUrl.value.trim();
+      const file = addMomentFile.files[0];
+      const submitBtn = addMomentForm.querySelector('.auth-submit');
+
+      addMomentMessage.textContent = '';
+      addMomentMessage.className = 'auth-message';
+
+      if (!subcatId || !name || (!video_url && !file)) {
+        addMomentMessage.textContent = 'Выбери подкатегорию, укажи название и ссылку или файл видео.';
+        addMomentMessage.className = 'auth-message error';
+        return;
+      }
+      if (file && file.size > MAX_MOMENT_VIDEO_MB * 1024 * 1024) {
+        addMomentMessage.textContent = `Файл слишком большой (${(file.size / 1024 / 1024).toFixed(1)} МБ). Максимум — ${MAX_MOMENT_VIDEO_MB} МБ (лимит бакета).`;
+        addMomentMessage.className = 'auth-message error';
+        return;
+      }
+
+      const { count } = await supabase.from('candidates')
+        .select('id', { count: 'exact', head: true })
+        .eq('subcategory_id', subcatId).eq('status', 'approved');
+      if ((count || 0) >= 10) {
+        addMomentMessage.textContent = 'В этой подкатегории уже 10 моментов — это максимум для публичного голосования.';
+        addMomentMessage.className = 'auth-message error';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      try {
+        if (file) {
+          const path = `published/${safeFileName(file)}`;
+          const { error: uploadError } = await supabase.storage.from('candidate-moments').upload(path, file);
+          if (uploadError) throw uploadError;
+          video_url = supabase.storage.from('candidate-moments').getPublicUrl(path).data.publicUrl;
+        }
+
+        const sub = [...subcategoriesBySlug.values()].flat().find(s => s.id === subcatId);
+        const { error } = await supabase.from('candidates').insert({
+          nomination_slug: sub ? sub.nomination_slug : null,
+          subcategory_id: subcatId,
+          name,
+          video_url,
+          status: 'approved'
+        });
+        if (error) throw error;
+
+        addMomentMessage.textContent = 'Момент добавлен в голосование.';
+        addMomentMessage.className = 'auth-message success';
+        addMomentForm.reset();
+        renderAddMomentSubcatOptions();
+        if (subcatId === adminSelectedSubcatId) renderAdminSubcatResults();
+      } catch (err) {
+        console.error('RWPA add moment error:', err);
+        addMomentMessage.textContent = err.message || 'Не удалось добавить момент.';
+        addMomentMessage.className = 'auth-message error';
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+
+    const addCoachForm = document.getElementById('addCoachForm');
+    const addCoachSubcat = document.getElementById('addCoachSubcat');
+    const addCoachName = document.getElementById('addCoachName');
+    const addCoachPhoto = document.getElementById('addCoachPhoto');
+    const addCoachMessage = document.getElementById('addCoachMessage');
+
+    const MAX_COACH_PHOTO_MB = 5;
+
+    function renderAddCoachSubcatOptions(){
+      const options = [];
+      subcategoriesBySlug.forEach((subs, slug) => {
+        const nomWidget = widgetsBySlug.get(slug);
+        const nomLabel = nomWidget && nomWidget.titleEl ? nomWidget.titleEl.textContent : slug;
+        subs.filter(s => s.voting_mode === 'single').forEach(s => {
+          options.push(`<option value="${s.id}">${nomLabel} — ${s.label}</option>`);
+        });
+      });
+      addCoachSubcat.innerHTML = options.join('');
+    }
+
+    addCoachForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      const subcatId = addCoachSubcat.value;
+      const name = addCoachName.value.trim();
+      const file = addCoachPhoto.files[0];
+      const submitBtn = addCoachForm.querySelector('.auth-submit');
+
+      addCoachMessage.textContent = '';
+      addCoachMessage.className = 'auth-message';
+
+      if (!subcatId || !name || !file) {
+        addCoachMessage.textContent = 'Выбери подкатегорию, укажи имя и загрузи фото.';
+        addCoachMessage.className = 'auth-message error';
+        return;
+      }
+      if (file.size > MAX_COACH_PHOTO_MB * 1024 * 1024) {
+        addCoachMessage.textContent = `Фото слишком большое (${(file.size / 1024 / 1024).toFixed(1)} МБ). Максимум — ${MAX_COACH_PHOTO_MB} МБ.`;
+        addCoachMessage.className = 'auth-message error';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      try {
+        const path = `coaches/${safeFileName(file)}`;
+        const { error: uploadError } = await supabase.storage.from('jury-photos').upload(path, file);
+        if (uploadError) throw uploadError;
+        const photo_url = supabase.storage.from('jury-photos').getPublicUrl(path).data.publicUrl;
+
+        const sub = [...subcategoriesBySlug.values()].flat().find(s => s.id === subcatId);
+        const { error } = await supabase.from('candidates').insert({
+          nomination_slug: sub ? sub.nomination_slug : null,
+          subcategory_id: subcatId,
+          name,
+          photo_url,
+          status: 'approved'
+        });
+        if (error) throw error;
+
+        addCoachMessage.textContent = 'Тренер добавлен в голосование.';
+        addCoachMessage.className = 'auth-message success';
+        addCoachForm.reset();
+        renderAddCoachSubcatOptions();
+        if (subcatId === adminSelectedSubcatId) renderAdminSubcatResults();
+      } catch (err) {
+        console.error('RWPA add coach error:', err);
+        addCoachMessage.textContent = err.message || 'Не удалось добавить тренера.';
+        addCoachMessage.className = 'auth-message error';
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+
+    function createVoteWidgets(){
+      document.querySelectorAll('[data-nomination-slug]').forEach(node => {
+        const slug = node.dataset.nominationSlug;
+        if (!slug || widgetsBySlug.has(slug)) return;
+
+        const wrap = document.createElement('div');
+        wrap.className = 'nom-vote';
+        wrap.innerHTML =
+          '<div><span class="nom-vote-count">–</span><span class="nom-vote-count-label">голосов</span></div>' +
+          '<button class="nom-vote-btn" type="button" disabled>Подключение…</button>';
+        node.appendChild(wrap);
+
+        const widget = {
+          countEl: wrap.querySelector('.nom-vote-count'),
+          btnEl: wrap.querySelector('.nom-vote-btn'),
+          titleEl: node.querySelector('h3')
+        };
+        widget.btnEl.addEventListener('click', () => openNominationFlow(slug));
+        widgetsBySlug.set(slug, widget);
+      });
+    }
+
+    function setVoted(widget, voted){
+      widget.btnEl.classList.toggle('voted', voted);
+      widget.btnEl.textContent = voted ? 'Учтено ✓' : 'Голосовать';
+    }
+
+    // For nominations with a single subcategory (e.g. "Лучший тренер"), the
+    // card button itself can lock once that one vote is cast. Nominations
+    // with several age subcategories (e.g. "Лучший гол") stay open — there's
+    // no single "voted" state to show at the card level, just "Голосовать".
+    function updateNomCardVotedState(slug){
+      const widget = widgetsBySlug.get(slug);
+      const subs = subcategoriesBySlug.get(slug) || [];
+      if (!widget) return;
+      if (!votingOpen) {
+        widget.btnEl.disabled = true;
+        widget.btnEl.classList.remove('voted');
+        widget.btnEl.textContent = 'Голосование закрыто';
+        return;
+      }
+      if (subs.length === 1) {
+        setVoted(widget, myVotedCandidateBySubcat.has(subs[0].id));
+      } else {
+        widget.btnEl.classList.remove('voted');
+        widget.btnEl.textContent = 'Голосовать';
+      }
+    }
+
+    function candidateThumb(videoUrl, photoUrl){
+      if (photoUrl) {
+        return `<div class="candidate-thumb candidate-thumb-photo"><img src="${photoUrl}" alt=""></div>`;
+      }
+      const attr = videoUrl ? ` data-video-url="${videoUrl}" role="button" aria-label="Смотреть видео"` : '';
+      return `<div class="candidate-thumb"${attr}><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>`;
+    }
+
+    const howItWorksOverlay = document.getElementById('howItWorksOverlay');
+    const howItWorksClose = document.getElementById('howItWorksClose');
+    document.getElementById('howItWorksBtn').addEventListener('click', () => howItWorksOverlay.classList.remove('hidden'));
+    howItWorksClose.addEventListener('click', () => howItWorksOverlay.classList.add('hidden'));
+    howItWorksOverlay.addEventListener('click', e => { if (e.target === howItWorksOverlay) howItWorksOverlay.classList.add('hidden'); });
+
+    const merchAdOverlay = document.getElementById('merchAdOverlay');
+    const merchAdClose = document.getElementById('merchAdClose');
+    const merchAdCloseLabel = document.getElementById('merchAdCloseLabel');
+    let merchAdCountdownTimer = null;
+
+    function closeMerchAd(){
+      if (!merchAdClose.disabled) merchAdOverlay.classList.add('hidden');
+    }
+
+    function showMerchAd(){
+      let secondsLeft = 5;
+      merchAdClose.disabled = true;
+      merchAdCloseLabel.textContent = String(secondsLeft);
+      merchAdOverlay.classList.remove('hidden');
+      clearInterval(merchAdCountdownTimer);
+      merchAdCountdownTimer = setInterval(() => {
+        secondsLeft -= 1;
+        if (secondsLeft <= 0) {
+          clearInterval(merchAdCountdownTimer);
+          merchAdClose.disabled = false;
+          merchAdCloseLabel.textContent = '✕';
+        } else {
+          merchAdCloseLabel.textContent = String(secondsLeft);
+        }
+      }, 1000);
+    }
+
+    merchAdClose.addEventListener('click', closeMerchAd);
+    merchAdOverlay.addEventListener('click', e => { if (e.target === merchAdOverlay) closeMerchAd(); });
+
+    // Once per browser session — an ad on every page view/navigation would be
+    // obnoxious rather than promotional.
+    if (!sessionStorage.getItem('rwpaMerchAdShown')) {
+      sessionStorage.setItem('rwpaMerchAdShown', '1');
+      setTimeout(showMerchAd, 1500);
+    }
+
+    const videoLightboxOverlay = document.getElementById('videoLightboxOverlay');
+    const videoLightboxPlayer = document.getElementById('videoLightboxPlayer');
+    const videoLightboxClose = document.getElementById('videoLightboxClose');
+
+    function openVideoLightbox(url){
+      videoLightboxPlayer.src = url;
+      videoLightboxOverlay.classList.remove('hidden');
+      videoLightboxPlayer.play().catch(() => {});
+    }
+    function closeVideoLightbox(){
+      videoLightboxPlayer.pause();
+      videoLightboxPlayer.removeAttribute('src');
+      videoLightboxPlayer.load();
+      videoLightboxOverlay.classList.add('hidden');
+    }
+    videoLightboxClose.addEventListener('click', closeVideoLightbox);
+    videoLightboxOverlay.addEventListener('click', e => { if (e.target === videoLightboxOverlay) closeVideoLightbox(); });
+
+    function wireVideoThumbs(container){
+      container.querySelectorAll('[data-video-url]').forEach(el => {
+        el.addEventListener('click', () => openVideoLightbox(el.dataset.videoUrl));
+      });
+    }
+
+    function renderSubcategoryModal(slug){
+      const widget = widgetsBySlug.get(slug);
+      const subs = subcategoriesBySlug.get(slug) || [];
+      modalTitle.textContent = widget && widget.titleEl ? widget.titleEl.textContent : '';
+
+      modalList.innerHTML = subs.map(s => `
+        <div class="candidate-row">
+          <div class="candidate-info">
+            <div class="candidate-name">${s.label}</div>
+          </div>
+          <button class="candidate-vote-btn${myVotedCandidateBySubcat.has(s.id) ? ' voted' : ''}" type="button" data-subcat-id="${s.id}">
+            ${myVotedCandidateBySubcat.has(s.id) ? 'Учтено ✓' : 'Выбрать'}
+          </button>
+        </div>
+      `).join('');
+
+      modalList.querySelectorAll('.candidate-vote-btn').forEach(btn => {
+        btn.addEventListener('click', () => openCandidateModal(slug, btn.dataset.subcatId));
+      });
+    }
+
+    function renderCandidateModal(slug, subcatId){
+      const widget = widgetsBySlug.get(slug);
+      const subs = subcategoriesBySlug.get(slug) || [];
+      const sub = subs.find(s => s.id === subcatId);
+      const candidates = candidatesBySubcat.get(subcatId) || [];
+      const baseTitle = widget && widget.titleEl ? widget.titleEl.textContent : '';
+      modalTitle.textContent = sub && subs.length > 1 ? `${baseTitle} — ${sub.label}` : baseTitle;
+      const votedId = myVotedCandidateBySubcat.get(subcatId);
+
+      const backRow = subs.length > 1
+        ? '<button type="button" class="candidate-back-btn" id="candidateBackBtn">← К возрастным группам</button>'
+        : '';
+
+      modalList.innerHTML = backRow + candidates.map(c => `
+        <div class="candidate-row">
+          ${candidateThumb(c.video_url, c.photo_url)}
+          <div class="candidate-info">
+            <div class="candidate-name">${c.name}</div>
+            ${c.photo_url ? '' : c.video_url
+              ? `<button type="button" class="candidate-video-link" data-video-url="${c.video_url}">Смотреть видео</button>`
+              : '<div class="candidate-video-note">Видео скоро появится (тестовый режим)</div>'}
+          </div>
+          <button class="candidate-vote-btn${votedId === c.id ? ' voted' : ''}" type="button"
+            data-candidate-id="${c.id}" ${votedId ? 'disabled' : ''}>
+            ${votedId === c.id ? 'Учтено ✓' : 'Проголосовать'}
+          </button>
+        </div>
+      `).join('');
+
+      wireVideoThumbs(modalList);
+
+      const backBtn = document.getElementById('candidateBackBtn');
+      if (backBtn) backBtn.addEventListener('click', () => openSubcategoryModal(slug));
+
+      modalList.querySelectorAll('.candidate-vote-btn').forEach(btn => {
+        btn.addEventListener('click', () => castVoteForCandidate(slug, subcatId, btn.dataset.candidateId));
+      });
+    }
+
+    function rankOptions(selected){
+      let opts = '<option value="">—</option>';
+      for (let n = 1; n <= 10; n++) {
+        opts += `<option value="${n}"${selected === n ? ' selected' : ''}>${n}</option>`;
+      }
+      return opts;
+    }
+
+    // Once a place is taken by one moment, every other <select> has that
+    // <option> disabled — so two moments can never end up on the same place.
+    function refreshRankOptionAvailability(){
+      const selects = [...modalList.querySelectorAll('.rank-select')];
+      selects.forEach(select => {
+        const takenByOthers = new Set(
+          selects.filter(s => s !== select && s.value !== '').map(s => s.value)
+        );
+        [...select.options].forEach(opt => {
+          if (opt.value === '') return;
+          opt.disabled = takenByOthers.has(opt.value);
+        });
+      });
+    }
+
+    function validateRankingForm(){
+      refreshRankOptionAvailability();
+      const selects = [...modalList.querySelectorAll('.rank-select')];
+      const submitBtn = document.getElementById('submitRankingBtn');
+      const complete = selects.every(s => s.value !== '');
+      if (submitBtn) submitBtn.disabled = !complete;
+    }
+
+    function renderRankingModal(slug, subcatId){
+      const widget = widgetsBySlug.get(slug);
+      const subs = subcategoriesBySlug.get(slug) || [];
+      const sub = subs.find(s => s.id === subcatId);
+      const candidates = candidatesBySubcat.get(subcatId) || [];
+      const baseTitle = widget && widget.titleEl ? widget.titleEl.textContent : '';
+      modalTitle.textContent = sub ? `${baseTitle} — ${sub.label}` : baseTitle;
+
+      const myRanks = myRankingsBySubcat.get(subcatId) || new Map();
+      const alreadySubmitted = myRanks.size > 0;
+
+      const backRow = '<button type="button" class="candidate-back-btn" id="candidateBackBtn">← К возрастным группам</button>';
+      const formUrl = MOMENT_FORMS[slug];
+      const uploadLinkRow = formUrl
+        ? `<a class="candidate-back-btn" href="${formUrl}" target="_blank" rel="noopener" style="display:block;margin-bottom:14px;">+ Прислать свой момент (форма)</a>`
+        : '';
+
+      if (candidates.length === 0) {
+        modalList.innerHTML = backRow +
+          '<p class="candidate-video-note" style="margin-bottom:14px;">Голосование в этой подкатегории пока не открыто — моментов ещё нет.</p>' +
+          uploadLinkRow;
+        document.getElementById('candidateBackBtn').addEventListener('click', () => openSubcategoryModal(slug));
+        return;
+      }
+
+      const introRow = `<p class="candidate-video-note" style="margin-bottom:14px;">Расставьте моменты с 1 (лучший) по ${candidates.length} место — каждое место можно использовать только один раз.</p>`;
+
+      const rows = candidates.map(c => `
+        <div class="candidate-row">
+          ${candidateThumb(c.video_url)}
+          <div class="candidate-info">
+            <div class="candidate-name">${c.name}</div>
+            ${c.video_url
+              ? `<button type="button" class="candidate-video-link" data-video-url="${c.video_url}">Смотреть видео</button>`
+              : '<div class="candidate-video-note">Видео скоро появится (тестовый режим)</div>'}
+          </div>
+          <select class="rank-select" data-candidate-id="${c.id}" ${alreadySubmitted ? 'disabled' : ''}>
+            ${rankOptions(myRanks.get(c.id) || null)}
+          </select>
+        </div>
+      `).join('');
+
+      const submitRow = alreadySubmitted
+        ? '<button class="btn btn-primary auth-submit" type="button" disabled>Рейтинг отправлен ✓</button>'
+        : '<button class="btn btn-primary auth-submit" type="button" id="submitRankingBtn" disabled>Отправить рейтинг</button>' +
+          '<div class="auth-message" id="rankingMessage"></div>';
+
+      modalList.innerHTML = backRow + uploadLinkRow + introRow + rows + submitRow;
+
+      wireVideoThumbs(modalList);
+
+      const backBtn = document.getElementById('candidateBackBtn');
+      if (backBtn) backBtn.addEventListener('click', () => openSubcategoryModal(slug));
+
+      if (!alreadySubmitted) {
+        modalList.querySelectorAll('.rank-select').forEach(s => s.addEventListener('change', validateRankingForm));
+        refreshRankOptionAvailability();
+        const submitBtn = document.getElementById('submitRankingBtn');
+        submitBtn.addEventListener('click', () => submitRanking(slug, subcatId));
+      }
+    }
+
+    async function submitRanking(slug, subcatId){
+      const selects = [...modalList.querySelectorAll('.rank-select')];
+      const entries = selects.map(s => ({ candidate_id: s.dataset.candidateId, rank: Number(s.value) }));
+      const msg = document.getElementById('rankingMessage');
+      const submitBtn = document.getElementById('submitRankingBtn');
+      submitBtn.disabled = true;
+
+      const rows = entries.map(e => ({
+        nomination_slug: slug,
+        subcategory_id: subcatId,
+        candidate_id: e.candidate_id,
+        rank: e.rank
+      }));
+
+      const { error } = await supabase.from('votes').insert(rows);
+      if (error) {
+        submitBtn.disabled = false;
+        if (msg) {
+          msg.textContent = error.code === '23505' ? 'Рейтинг уже отправлен.' : error.message;
+          msg.className = 'auth-message error';
+        }
+        return;
+      }
+
+      const map = new Map();
+      entries.forEach(e => map.set(e.candidate_id, e.rank));
+      myRankingsBySubcat.set(subcatId, map);
+      renderRankingModal(slug, subcatId);
+    }
+
+    function openNominationFlow(slug){
+      if (!votingOpen) return;
+      const subs = subcategoriesBySlug.get(slug) || [];
+      if (subs.length === 0) return;
+      if (!currentSession) {
+        pendingSlugAfterAuth = slug;
+        openAuthModal();
+        return;
+      }
+      if (!isEmailConfirmed()) {
+        openConfirmEmailModal();
+        return;
+      }
+      if (subs.length === 1) {
+        openCandidateModal(slug, subs[0].id);
+      } else {
+        openSubcategoryModal(slug);
+      }
+    }
+
+    function openSubcategoryModal(slug){
+      openNomSlug = slug;
+      openSubcatId = null;
+      renderSubcategoryModal(slug);
+      modalOverlay.classList.remove('hidden');
+    }
+
+    function openCandidateModal(slug, subcatId){
+      openNomSlug = slug;
+      openSubcatId = subcatId;
+      const subs = subcategoriesBySlug.get(slug) || [];
+      const sub = subs.find(s => s.id === subcatId);
+      if (sub && sub.voting_mode === 'ranked') {
+        renderRankingModal(slug, subcatId);
+      } else {
+        renderCandidateModal(slug, subcatId);
+      }
+      modalOverlay.classList.remove('hidden');
+    }
+
+    function closeCandidateModal(){
+      openNomSlug = null;
+      openSubcatId = null;
+      modalOverlay.classList.add('hidden');
+    }
+
+    modalClose.addEventListener('click', closeCandidateModal);
+    modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeCandidateModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { howItWorksOverlay.classList.add('hidden'); closeMerchAd(); closeVideoLightbox(); closeCandidateModal(); closeAuthModal(); closeResetPasswordModal(); closeConfirmEmailModal(); } });
+
+    // ---------- Auth ----------
+
+    function decodeJwtPayload(token){
+      try {
+        const base64 = token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
+        const padded = base64 + '='.repeat((4 - base64.length % 4) % 4);
+        return JSON.parse(atob(padded));
+      } catch {
+        return null;
+      }
+    }
+
+    // Anonymous sessions (leftover from before accounts were required, or
+    // if anonymous sign-ins are ever used elsewhere) don't count as "logged
+    // in" for voting — only real email/password accounts do. The client SDK's
+    // session.user.is_anonymous isn't reliably populated, so read the same
+    // is_anonymous claim straight out of the JWT that the database itself
+    // checks in RLS.
+    function isRealSession(session){
+      if (!session || !session.user || !session.access_token) return false;
+      if (session.user.is_anonymous) return false;
+      const payload = decodeJwtPayload(session.access_token);
+      return !(payload && payload.is_anonymous);
+    }
+
+    function updateAuthStatus(session){
+      currentSession = isRealSession(session) ? session : null;
+
+      // Desktop: a fixed-width dropdown button, so header width never
+      // depends on email length or admin status (that's what was still
+      // causing layout shift/wrapping).
+      if (currentSession) {
+        const adminItem = isAdmin ? '<button type="button" class="account-dropdown-item admin-open-btn">Админ-панель</button>' : '';
+        authStatus.innerHTML = `
+          <div class="account-menu">
+            <button type="button" class="account-toggle" id="accountToggle">Аккаунт ▾</button>
+            <div class="account-dropdown hidden" id="accountDropdown">
+              <div class="account-email">${currentSession.user.email}</div>
+              ${adminItem}
+              <button type="button" class="account-dropdown-item auth-logout-btn">Выйти</button>
+            </div>
+          </div>`;
+        const toggle = document.getElementById('accountToggle');
+        const dropdown = document.getElementById('accountDropdown');
+        toggle.addEventListener('click', e => { e.stopPropagation(); dropdown.classList.toggle('hidden'); });
+        document.addEventListener('click', () => dropdown.classList.add('hidden'));
+        authStatus.querySelector('.auth-logout-btn').addEventListener('click', async () => {
+          await supabase.auth.signOut();
+        });
+        const adminBtn = authStatus.querySelector('.admin-open-btn');
+        if (adminBtn) adminBtn.addEventListener('click', () => { dropdown.classList.add('hidden'); openAdminPanel(); });
+      } else {
+        authStatus.innerHTML = `<button type="button" class="auth-login-btn">Войти</button>`;
+        authStatus.querySelector('.auth-login-btn').addEventListener('click', () => openAuthModal());
+      }
+
+      // Mobile: plenty of vertical room in the menu panel, keep it plain.
+      if (currentSession) {
+        const adminLink = isAdmin ? '<button type="button" class="admin-open-btn">Админ</button>' : '';
+        authStatusMobile.innerHTML = `<span class="auth-email">${currentSession.user.email}</span>${adminLink}<button type="button" class="auth-logout-btn">Выйти</button>`;
+        authStatusMobile.querySelector('.auth-logout-btn').addEventListener('click', async () => {
+          await supabase.auth.signOut();
+        });
+        const adminBtnMobile = authStatusMobile.querySelector('.admin-open-btn');
+        if (adminBtnMobile) adminBtnMobile.addEventListener('click', () => { closeMobileNav(); openAdminPanel(); });
+      } else {
+        authStatusMobile.innerHTML = `<button type="button" class="auth-login-btn">Войти</button>`;
+        authStatusMobile.querySelector('.auth-login-btn').addEventListener('click', () => { closeMobileNav(); openAuthModal(); });
+      }
+    }
+
+    // ---------- Admin ----------
+
+    async function checkAdmin(){
+      if (!currentSession) { isAdmin = false; return; }
+      const { data } = await supabase.from('admins').select('user_id').maybeSingle();
+      isAdmin = !!data;
+    }
+
+    let adminSelectedNomSlug = null;
+    let adminSelectedSubcatId = null;
+    let resultsSelectedNomSlug = null;
+    let resultsSelectedSubcatId = null;
+
+    function renderAdminNomTabs(){
+      const container = document.getElementById('adminNomTabs');
+      container.innerHTML = [...subcategoriesBySlug.keys()].map(slug => {
+        const widget = widgetsBySlug.get(slug);
+        const label = widget && widget.titleEl ? widget.titleEl.textContent : slug;
+        return `<button type="button" class="auth-tab${slug === adminSelectedNomSlug ? ' active' : ''}" data-nom-slug="${slug}">${label}</button>`;
+      }).join('');
+      container.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', () => selectAdminNom(btn.dataset.nomSlug));
+      });
+    }
+
+    function renderAdminSubcatTabs(){
+      const container = document.getElementById('adminSubcatTabs');
+      const subs = subcategoriesBySlug.get(adminSelectedNomSlug) || [];
+      if (subs.length <= 1) { container.innerHTML = ''; return; }
+      container.innerHTML = subs.map(s =>
+        `<button type="button" class="auth-tab${s.id === adminSelectedSubcatId ? ' active' : ''}" data-subcat-id="${s.id}">${s.label}</button>`
+      ).join('');
+      container.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          adminSelectedSubcatId = btn.dataset.subcatId;
+          renderAdminSubcatTabs();
+          renderAdminSubcatResults();
+        });
+      });
+    }
+
+    // For ranked subcategories (best-goal / best-save), the standing is the
+    // AVERAGE place each moment got across everyone who voted — not just a
+    // raw points total — so admins see "1 место, среднее 1.8" directly.
+    // Single-pick subcategories (best-coach) keep the simple vote count.
+    async function computeStandings(subcatId){
+      const candidates = candidatesBySubcat.get(subcatId) || [];
+      const allSubs = [...subcategoriesBySlug.values()].flat();
+      const sub = allSubs.find(s => s.id === subcatId);
+
+      if (!sub || sub.voting_mode !== 'ranked') {
+        return candidates.slice().sort((a, b) => (b.vote_count || 0) - (a.vote_count || 0));
+      }
+
+      const { data, error } = await supabase.from('votes')
+        .select('candidate_id, rank')
+        .eq('subcategory_id', subcatId)
+        .not('rank', 'is', null);
+      if (error) { console.error('RWPA standings error:', error); return candidates; }
+
+      const statsByCandidate = new Map();
+      (data || []).forEach(row => {
+        if (!statsByCandidate.has(row.candidate_id)) statsByCandidate.set(row.candidate_id, { sum: 0, count: 0 });
+        const s = statsByCandidate.get(row.candidate_id);
+        s.sum += row.rank;
+        s.count += 1;
+      });
+
+      return candidates.map(c => {
+        const s = statsByCandidate.get(c.id);
+        return { ...c, avgRank: s ? s.sum / s.count : null, votersCount: s ? s.count : 0 };
+      }).sort((a, b) => {
+        if (a.avgRank === null && b.avgRank === null) return 0;
+        if (a.avgRank === null) return 1;
+        if (b.avgRank === null) return -1;
+        return a.avgRank - b.avgRank;
+      });
+    }
+
+    function standingsRowsHtml(list, withDelete){
+      if (!list.length) return '<p class="candidate-video-note">Нет данных.</p>';
+      return list.map((c, i) => {
+        const ranked = c.avgRank !== undefined;
+        const sub = ranked
+          ? (c.avgRank !== null ? `Среднее место: ${c.avgRank.toFixed(1)} · голосов: ${c.votersCount}` : 'Пока не оценивали')
+          : '';
+        return `
+          <div class="admin-news-item">
+            <div class="admin-news-item-body">
+              <h5>${i + 1} место — ${c.name}</h5>
+              ${sub ? `<p>${sub}</p>` : ''}
+            </div>
+            ${!ranked ? `<span class="admin-stat-num" style="font-size:1.2rem;">${c.vote_count || 0}</span>` : ''}
+            ${withDelete ? `<button class="admin-news-delete" type="button" data-delete-candidate="${c.id}">Удалить</button>` : ''}
+          </div>`;
+      }).join('');
+    }
+
+    async function deleteCandidate(id, subcatId){
+      const sure = confirm('Удалить этот момент насовсем? Голоса за него тоже удалятся. Это необратимо.');
+      if (!sure) return;
+      const { error } = await supabase.rpc('delete_candidate', { target_id: id });
+      if (error) {
+        alert('Не удалось удалить: ' + error.message);
+        return;
+      }
+      const list = candidatesBySubcat.get(subcatId);
+      if (list) candidatesBySubcat.set(subcatId, list.filter(c => c.id !== id));
+      candidatesById.delete(id);
+      await renderAdminSubcatResults();
+      if (resultsPublic) renderResults();
+    }
+
+    async function renderAdminSubcatResults(){
+      const container = document.getElementById('adminSubcatResults');
+      if (!adminSelectedSubcatId) { container.innerHTML = ''; return; }
+      const list = await computeStandings(adminSelectedSubcatId);
+      container.innerHTML = standingsRowsHtml(list, true);
+      container.querySelectorAll('[data-delete-candidate]').forEach(btn => {
+        btn.addEventListener('click', () => deleteCandidate(btn.dataset.deleteCandidate, adminSelectedSubcatId));
+      });
+    }
+
+    function selectAdminNom(slug){
+      adminSelectedNomSlug = slug;
+      const subs = subcategoriesBySlug.get(slug) || [];
+      adminSelectedSubcatId = subs[0] ? subs[0].id : null;
+      renderAdminNomTabs();
+      renderAdminSubcatTabs();
+      renderAdminSubcatResults();
+    }
+
+    document.getElementById('adminVotingToggle').addEventListener('change', async e => {
+      const { error } = await supabase.from('site_settings').update({ voting_open: e.target.checked }).eq('id', 1);
+      if (error) {
+        console.error('RWPA voting toggle error:', error);
+        e.target.checked = !e.target.checked;
+        return;
+      }
+      votingOpen = e.target.checked;
+      applyVotingOpenState();
+    });
+
+    document.getElementById('adminResultsToggle').addEventListener('change', async e => {
+      const { error } = await supabase.from('site_settings').update({ results_public: e.target.checked }).eq('id', 1);
+      if (error) {
+        console.error('RWPA results toggle error:', error);
+        e.target.checked = !e.target.checked;
+        return;
+      }
+      resultsPublic = e.target.checked;
+      applyResultsPublicState();
+    });
+
+    document.getElementById('adminMerchPreorders').addEventListener('change', async e => {
+      const value = Math.max(0, parseInt(e.target.value, 10) || 0);
+      e.target.value = value;
+      const { error } = await supabase.from('site_settings').update({ merch_preorders: value }).eq('id', 1);
+      if (error) {
+        console.error('RWPA merch preorders error:', error);
+        e.target.value = merchPreorders;
+        return;
+      }
+      merchPreorders = value;
+      applyMerchPreorders();
+    });
+
+    document.getElementById('adminResetVotesBtn').addEventListener('click', async () => {
+      const sure = confirm('Точно обнулить ВСЕ голоса по всем номинациям? Это необратимо — все места и очки участников станут нулевыми.');
+      if (!sure) return;
+      const sureAgain = confirm('Последнее предупреждение: все текущие голоса будут удалены без возможности восстановления. Продолжить?');
+      if (!sureAgain) return;
+
+      const { error } = await supabase.rpc('reset_all_votes');
+      if (error) {
+        alert('Не удалось обнулить голоса: ' + error.message);
+        return;
+      }
+
+      myVotedCandidateBySubcat.clear();
+      myRankingsBySubcat.clear();
+      candidatesBySubcat.forEach(list => list.forEach(c => { c.vote_count = 0; }));
+      widgetsBySlug.forEach((widget, slug) => {
+        widget.countEl.textContent = '0';
+        updateNomCardVotedState(slug);
+      });
+      loadAdminStats();
+      renderAdminSubcatResults();
+      if (resultsPublic) renderResults();
+      alert('Готово — все голоса обнулены.');
+    });
+
+    function openAdminPanel(){
+      if (!isAdmin) return;
+      adminModalOverlay.classList.remove('hidden');
+      document.getElementById('adminVotingToggle').checked = votingOpen;
+      document.getElementById('adminResultsToggle').checked = resultsPublic;
+      document.getElementById('adminMerchPreorders').value = merchPreorders;
+      loadAdminStats();
+      renderAdminNewsList();
+      renderAdminJuryList();
+      renderAddMomentSubcatOptions();
+      renderAddCoachSubcatOptions();
+      if (!adminSelectedNomSlug) {
+        selectAdminNom([...subcategoriesBySlug.keys()][0]);
+      } else {
+        renderAdminNomTabs();
+        renderAdminSubcatTabs();
+        renderAdminSubcatResults();
+      }
+    }
+
+    function closeAdminPanel(){
+      adminModalOverlay.classList.add('hidden');
+    }
+
+    adminModalClose.addEventListener('click', closeAdminPanel);
+    adminModalOverlay.addEventListener('click', e => { if (e.target === adminModalOverlay) closeAdminPanel(); });
+
+    async function loadAdminStats(){
+      adminStats.innerHTML = '<div class="admin-stat-tile"><span class="admin-stat-num">…</span><span class="admin-stat-label">Загрузка</span></div>';
+
+      const { data, error } = await supabase.rpc('admin_stats');
+      const totals = (!error && data && data[0]) ? data[0] : { total_users: '–', total_votes: '–' };
+
+      const tiles = [
+        { label: 'Зарегистрировано', value: totals.total_users },
+        { label: 'Голосов всего', value: totals.total_votes }
+      ];
+      widgetsBySlug.forEach((widget, slug) => {
+        const subs = subcategoriesBySlug.get(slug) || [];
+        const title = widget.titleEl ? widget.titleEl.textContent : slug;
+        const total = subs.reduce((sum, s) =>
+          sum + (candidatesBySubcat.get(s.id) || []).reduce((a, c) => a + (c.vote_count || 0), 0), 0);
+        tiles.push({ label: title, value: total });
+      });
+
+      adminStats.innerHTML = tiles.map(t => `
+        <div class="admin-stat-tile">
+          <span class="admin-stat-num">${t.value}</span>
+          <span class="admin-stat-label">${t.label}</span>
+        </div>
+      `).join('');
+    }
+
+    function renderNewsGrid(){
+      document.getElementById('newsGrid').innerHTML = newsRows.map(item => `
+        <article class="news-card">
+          <div class="news-thumb"${item.image_url ? ` style="background-image:url('${item.image_url}');background-size:cover;background-position:center;"` : ''}></div>
+          <div class="news-body">
+            <span class="news-tag">${item.tag}</span>
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+            <span class="news-date">${item.news_date}</span>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    async function loadNews(){
+      const { data, error } = await supabase.from('news').select('*').order('created_at', { ascending: false });
+      if (error) { console.error('RWPA news error:', error); return; }
+      newsRows = data;
+      renderNewsGrid();
+      if (!adminModalOverlay.classList.contains('hidden')) renderAdminNewsList();
+    }
+
+    let juryRows = [];
+
+    function renderJuryGrid(){
+      const grid = document.getElementById('juryGrid');
+      grid.innerHTML = juryRows.map(j => `
+        <div class="jury-card">
+          <div class="jury-photo"${j.photo_url ? ` style="background-image:url('${j.photo_url}')"` : ''}></div>
+          <h3>${j.name}</h3>
+          ${j.role ? `<p>${j.role}</p>` : ''}
+        </div>
+      `).join('');
+    }
+
+    async function loadJury(){
+      const { data, error } = await supabase.from('jury_members').select('*').order('sort_order');
+      if (error) { console.error('RWPA jury error:', error); return; }
+      juryRows = data;
+      renderJuryGrid();
+      if (!adminModalOverlay.classList.contains('hidden')) renderAdminJuryList();
+    }
+
+    function renderAdminJuryList(){
+      const list = document.getElementById('adminJuryList');
+      list.innerHTML = juryRows.map(j => `
+        <div class="admin-news-item">
+          <div class="admin-news-item-body">
+            <h5>${j.name}</h5>
+            <p>${j.role || ''}</p>
+          </div>
+          <button class="admin-news-delete" type="button" data-jury-id="${j.id}">Удалить</button>
+        </div>
+      `).join('');
+      list.querySelectorAll('[data-jury-id]').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const { error } = await supabase.from('jury_members').delete().eq('id', btn.dataset.juryId);
+          if (error) { console.error('RWPA jury delete error:', error); return; }
+          await loadJury();
+        });
+      });
+    }
+
+    document.getElementById('juryForm').addEventListener('submit', async e => {
+      e.preventDefault();
+      const form = e.target;
+      const submitBtn = form.querySelector('.auth-submit');
+      const msg = document.getElementById('juryFormMessage');
+      const name = document.getElementById('juryName').value.trim();
+      const role = document.getElementById('juryRole').value.trim();
+      const file = document.getElementById('juryPhoto').files[0];
+
+      submitBtn.disabled = true;
+      msg.textContent = '';
+      msg.className = 'auth-message';
+
+      let photo_url = null;
+      if (file) {
+        const path = safeFileName(file);
+        const { error: uploadError } = await supabase.storage.from('jury-photos').upload(path, file);
+        if (uploadError) {
+          submitBtn.disabled = false;
+          msg.textContent = uploadError.message;
+          msg.className = 'auth-message error';
+          return;
+        }
+        photo_url = supabase.storage.from('jury-photos').getPublicUrl(path).data.publicUrl;
+      }
+
+      const { error } = await supabase.from('jury_members').insert({ name, role: role || null, photo_url });
+      submitBtn.disabled = false;
+      if (error) {
+        msg.textContent = error.message;
+        msg.className = 'auth-message error';
+        return;
+      }
+      form.reset();
+      await loadJury();
+    });
+
+    function renderAdminNewsList(){
+      adminNewsList.innerHTML = newsRows.map(item => `
+        <div class="admin-news-item">
+          <div class="admin-news-item-body">
+            <h5>${item.title}</h5>
+            <p>${item.tag} · ${item.news_date}</p>
+          </div>
+          <button class="admin-news-delete" type="button" data-news-id="${item.id}">Удалить</button>
+        </div>
+      `).join('');
+      adminNewsList.querySelectorAll('.admin-news-delete').forEach(btn => {
+        btn.addEventListener('click', () => deleteNews(btn.dataset.newsId));
+      });
+    }
+
+    async function deleteNews(id){
+      const { error } = await supabase.from('news').delete().eq('id', id);
+      if (error) { console.error('RWPA news delete error:', error); return; }
+      await loadNews();
+    }
+
+    newsForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      const submitBtn = newsForm.querySelector('.auth-submit');
+      const tag = document.getElementById('newsTag').value.trim();
+      const title = document.getElementById('newsTitle').value.trim();
+      const description = document.getElementById('newsDescription').value.trim();
+      const news_date = document.getElementById('newsDate').value.trim();
+      const imageFile = document.getElementById('newsImage').files[0];
+
+      submitBtn.disabled = true;
+      newsFormMessage.textContent = '';
+      newsFormMessage.className = 'auth-message';
+
+      let image_url = null;
+      if (imageFile) {
+        const path = safeFileName(imageFile);
+        const { error: uploadError } = await supabase.storage.from('news-images').upload(path, imageFile);
+        if (uploadError) {
+          submitBtn.disabled = false;
+          newsFormMessage.textContent = uploadError.message;
+          newsFormMessage.className = 'auth-message error';
+          return;
+        }
+        image_url = supabase.storage.from('news-images').getPublicUrl(path).data.publicUrl;
+      }
+
+      const { error } = await supabase.from('news').insert({ tag, title, description, news_date, image_url });
+      submitBtn.disabled = false;
+      if (error) {
+        newsFormMessage.textContent = error.message;
+        newsFormMessage.className = 'auth-message error';
+        return;
+      }
+      newsForm.reset();
+      await loadNews();
+    });
+
+    const authTelegramLabel = document.getElementById('authTelegramLabel');
+    const authTelegram = document.getElementById('authTelegram');
+
+    function setAuthMode(mode){
+      authMode = mode;
+      authTabLogin.classList.toggle('active', mode === 'login');
+      authTabSignup.classList.toggle('active', mode === 'signup');
+      authModalTitle.textContent = mode === 'login' ? 'Войдите, чтобы голосовать' : 'Регистрация';
+      authPassword.autocomplete = mode === 'login' ? 'current-password' : 'new-password';
+      authSubmit.textContent = mode === 'login' ? 'Войти' : 'Зарегистрироваться';
+      authTelegramLabel.classList.toggle('hidden', mode !== 'signup');
+      authTelegram.required = mode === 'signup';
+      authMessage.textContent = '';
+      authMessage.className = 'auth-message';
+    }
+
+    function openAuthModal(){
+      setAuthMode('login');
+      authForm.reset();
+      captchaToken = null;
+      authModalOverlay.classList.remove('hidden');
+      renderOrResetTurnstile('authCaptcha', handleAuthCaptchaSolved);
+    }
+
+    function closeAuthModal(){
+      authModalOverlay.classList.add('hidden');
+      pendingSlugAfterAuth = null;
+    }
+
+    authModalClose.addEventListener('click', closeAuthModal);
+    authModalOverlay.addEventListener('click', e => { if (e.target === authModalOverlay) closeAuthModal(); });
+    authTabLogin.addEventListener('click', () => setAuthMode('login'));
+    authTabSignup.addEventListener('click', () => setAuthMode('signup'));
+
+    let captchaToken = null;
+
+    function handleAuthCaptchaSolved(token){
+      captchaToken = token;
+      if (authMessage.textContent === 'Подтверди, что ты не робот.') {
+        authMessage.textContent = '';
+        authMessage.className = 'auth-message';
+      }
+    }
+
+    function resetCaptcha(){
+      captchaToken = null;
+      if (turnstileWidgetIds.authCaptcha !== undefined) turnstile.reset(turnstileWidgetIds.authCaptcha);
+    }
+
+    // A soft speed bump against throwaway-inbox signup bots — easily
+    // bypassed by anyone determined, but it filters casual scripted
+    // signups. Real enforcement is the confirmed-email check server-side.
+    const DISPOSABLE_EMAIL_DOMAINS = new Set([
+      'mailinator.com', 'guerrillamail.com', 'guerrillamail.info', '10minutemail.com',
+      '10minutemail.net', 'tempmail.com', 'temp-mail.org', 'throwawaymail.com',
+      'yopmail.com', 'trashmail.com', 'getnada.com', 'fakeinbox.com', 'sharklasers.com',
+      'dispostable.com', 'mailnesia.com', 'mintemail.com', 'mohmal.com', 'moakt.com',
+      'emailondeck.com', 'maildrop.cc', 'discard.email', 'tempinbox.com', 'spambog.com'
+    ]);
+
+    authForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      const email = authEmail.value.trim();
+      const password = authPassword.value;
+
+      if (!captchaToken) {
+        authMessage.textContent = 'Подтверди, что ты не робот.';
+        authMessage.className = 'auth-message error';
+        return;
+      }
+
+      if (authMode === 'signup' && DISPOSABLE_EMAIL_DOMAINS.has(email.split('@')[1]?.toLowerCase())) {
+        authMessage.textContent = 'Временные почтовые сервисы не подойдут — укажи постоянный email.';
+        authMessage.className = 'auth-message error';
+        return;
+      }
+
+      authSubmit.disabled = true;
+      authMessage.textContent = '';
+      authMessage.className = 'auth-message';
+
+      if (authMode === 'signup') {
+        const telegram_contact = authTelegram.value.trim();
+        const { data, error } = await supabase.auth.signUp({
+          email, password,
+          options: { captchaToken, data: { telegram_contact } }
+        });
+        authSubmit.disabled = false;
+        resetCaptcha();
+        if (error) {
+          authMessage.textContent = error.message;
+          authMessage.className = 'auth-message error';
+          return;
+        }
+        if (!data.session) {
+          authMessage.textContent = 'Проверьте почту — мы отправили ссылку для подтверждения аккаунта.';
+          authMessage.className = 'auth-message success';
+          return;
+        }
+        closeAuthModal();
+      } else {
+        const { error } = await supabase.auth.signInWithPassword({ email, password, options: { captchaToken } });
+        authSubmit.disabled = false;
+        resetCaptcha();
+        if (error) {
+          authMessage.textContent = error.message;
+          authMessage.className = 'auth-message error';
+          return;
+        }
+        closeAuthModal();
+        if (pendingSlugAfterAuth) {
+          const slug = pendingSlugAfterAuth;
+          pendingSlugAfterAuth = null;
+          openNominationFlow(slug);
+        }
+      }
+    });
+
+    async function castVoteForCandidate(slug, subcatId, candidateId){
+      if (myVotedCandidateBySubcat.has(subcatId)) return;
+
+      const { error } = await supabase.from('votes')
+        .insert({ nomination_slug: slug, subcategory_id: subcatId, candidate_id: candidateId });
+      if (error && error.code !== '23505') {
+        console.error('RWPA vote error:', error);
+        return;
+      }
+      myVotedCandidateBySubcat.set(subcatId, candidateId);
+      updateNomCardVotedState(slug);
+      if (openSubcatId === subcatId) renderCandidateModal(slug, subcatId);
+    }
+
+    async function loadNominations(){
+      const { data, error } = await supabase.from('nominations').select('slug, vote_count');
+      if (error) {
+        console.error('RWPA nominations error:', error);
+        widgetsBySlug.forEach(widget => {
+          widget.btnEl.disabled = true;
+          widget.btnEl.textContent = 'Недоступно';
+        });
+        return;
+      }
+      data.forEach(row => {
+        const widget = widgetsBySlug.get(row.slug);
+        if (!widget) return;
+        widget.countEl.textContent = String(row.vote_count);
+        if (!widget.btnEl.classList.contains('voted')) widget.btnEl.disabled = false;
+      });
+    }
+
+    let votingOpen = false;
+    let resultsPublic = false;
+    let merchPreorders = 0;
+    const MERCH_PREORDER_MAX = 35;
+
+    async function loadSiteSettings(){
+      const { data, error } = await supabase.from('site_settings').select('voting_open, results_public, merch_preorders').eq('id', 1).maybeSingle();
+      if (error) { console.error('RWPA site_settings error:', error); return; }
+      votingOpen = !!(data && data.voting_open);
+      resultsPublic = !!(data && data.results_public);
+      merchPreorders = (data && data.merch_preorders) || 0;
+    }
+
+    function applyVotingOpenState(){
+      document.getElementById('votingClosedBanner').classList.toggle('hidden', votingOpen);
+      widgetsBySlug.forEach((widget, slug) => updateNomCardVotedState(slug));
+    }
+
+    function applyResultsPublicState(){
+      document.getElementById('resultsClosedBanner').classList.toggle('hidden', resultsPublic);
+      document.getElementById('resultsContent').classList.toggle('hidden', !resultsPublic);
+      if (resultsPublic) renderResults();
+    }
+
+    function applyMerchPreorders(){
+      const text = `${merchPreorders}/${MERCH_PREORDER_MAX} предзаказов`;
+      document.querySelectorAll('.merch-preorder-counter').forEach(el => { el.textContent = text; });
+    }
+
+    function subscribeToSiteSettings(){
+      supabase
+        .channel('site-settings-changes')
+        .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'site_settings' }, payload => {
+          votingOpen = !!payload.new.voting_open;
+          resultsPublic = !!payload.new.results_public;
+          merchPreorders = payload.new.merch_preorders || 0;
+          applyVotingOpenState();
+          applyResultsPublicState();
+          applyMerchPreorders();
+          const votingToggle = document.getElementById('adminVotingToggle');
+          if (votingToggle) votingToggle.checked = votingOpen;
+          const resultsToggle = document.getElementById('adminResultsToggle');
+          if (resultsToggle) resultsToggle.checked = resultsPublic;
+          const preordersInput = document.getElementById('adminMerchPreorders');
+          if (preordersInput && document.activeElement !== preordersInput) preordersInput.value = merchPreorders;
+        })
+        .subscribe();
+    }
+
+    async function renderResults(){
+      const nomTabs = document.getElementById('resultsNomTabs');
+      const subcatTabs = document.getElementById('resultsSubcatTabs');
+      const list = document.getElementById('resultsList');
+      const slugs = [...subcategoriesBySlug.keys()];
+      if (slugs.length === 0) return;
+
+      if (!resultsSelectedNomSlug) resultsSelectedNomSlug = slugs[0];
+
+      nomTabs.innerHTML = slugs.map(slug => {
+        const widget = widgetsBySlug.get(slug);
+        const label = widget && widget.titleEl ? widget.titleEl.textContent : slug;
+        return `<button type="button" class="auth-tab${slug === resultsSelectedNomSlug ? ' active' : ''}" data-nom-slug="${slug}">${label}</button>`;
+      }).join('');
+      nomTabs.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          resultsSelectedNomSlug = btn.dataset.nomSlug;
+          const subs = subcategoriesBySlug.get(resultsSelectedNomSlug) || [];
+          resultsSelectedSubcatId = subs[0] ? subs[0].id : null;
+          renderResults();
+        });
+      });
+
+      const subs = subcategoriesBySlug.get(resultsSelectedNomSlug) || [];
+      if (!resultsSelectedSubcatId) resultsSelectedSubcatId = subs[0] ? subs[0].id : null;
+
+      if (subs.length <= 1) {
+        subcatTabs.innerHTML = '';
+      } else {
+        subcatTabs.innerHTML = subs.map(s =>
+          `<button type="button" class="auth-tab${s.id === resultsSelectedSubcatId ? ' active' : ''}" data-subcat-id="${s.id}">${s.label}</button>`
+        ).join('');
+        subcatTabs.querySelectorAll('button').forEach(btn => {
+          btn.addEventListener('click', () => {
+            resultsSelectedSubcatId = btn.dataset.subcatId;
+            renderResults();
+          });
+        });
+      }
+
+      if (!resultsSelectedSubcatId) { list.innerHTML = ''; return; }
+      const standings = await computeStandings(resultsSelectedSubcatId);
+      list.innerHTML = standingsRowsHtml(standings);
+    }
+
+    async function loadSubcategories(){
+      const { data, error } = await supabase.from('subcategories')
+        .select('id, nomination_slug, slug, label, sort_order, voting_mode').order('sort_order');
+      if (error) {
+        console.error('RWPA subcategories error:', error);
+        return;
+      }
+      data.forEach(row => {
+        if (!subcategoriesBySlug.has(row.nomination_slug)) subcategoriesBySlug.set(row.nomination_slug, []);
+        subcategoriesBySlug.get(row.nomination_slug).push(row);
+      });
+    }
+
+    async function loadCandidates(){
+      const { data, error } = await supabase.from('candidates')
+        .select('id, nomination_slug, subcategory_id, name, video_url, photo_url, vote_count, status');
+      if (error) {
+        console.error('RWPA candidates error:', error);
+        return;
+      }
+      // Only approved moments ever show in the public voting UI — pending
+      // submissions (including your own) stay out until an admin approves.
+      data.filter(row => row.status === 'approved').forEach(row => {
+        if (!row.subcategory_id) return;
+        if (!candidatesBySubcat.has(row.subcategory_id)) candidatesBySubcat.set(row.subcategory_id, []);
+        candidatesBySubcat.get(row.subcategory_id).push(row);
+        candidatesById.set(row.id, row);
+      });
+    }
+
+    async function loadMyVotes(){
+      const { data, error } = await supabase.from('votes').select('nomination_slug, subcategory_id, candidate_id, rank');
+      if (error) return;
+      data.forEach(row => {
+        if (!row.subcategory_id || !row.candidate_id) return;
+        if (row.rank) {
+          if (!myRankingsBySubcat.has(row.subcategory_id)) myRankingsBySubcat.set(row.subcategory_id, new Map());
+          myRankingsBySubcat.get(row.subcategory_id).set(row.candidate_id, row.rank);
+        } else {
+          myVotedCandidateBySubcat.set(row.subcategory_id, row.candidate_id);
+        }
+      });
+      widgetsBySlug.forEach((widget, slug) => updateNomCardVotedState(slug));
+    }
+
+    function subscribeToLiveCounts(){
+      supabase
+        .channel('nominations-changes')
+        .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'nominations' }, payload => {
+          const widget = widgetsBySlug.get(payload.new.slug);
+          if (widget) widget.countEl.textContent = String(payload.new.vote_count);
+        })
+        .subscribe();
+
+      supabase
+        .channel('candidates-changes')
+        .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'candidates' }, payload => {
+          const list = candidatesBySubcat.get(payload.new.subcategory_id);
+          if (!list) return;
+          const idx = list.findIndex(c => c.id === payload.new.id);
+          if (idx !== -1) list[idx] = payload.new;
+          candidatesById.set(payload.new.id, payload.new);
+          if (openSubcatId === payload.new.subcategory_id) {
+            const subs = subcategoriesBySlug.get(openNomSlug) || [];
+            const sub = subs.find(s => s.id === openSubcatId);
+            if (sub && sub.voting_mode === 'ranked') renderRankingModal(openNomSlug, openSubcatId);
+            else renderCandidateModal(openNomSlug, openSubcatId);
+          }
+        })
+        .subscribe();
+    }
+
+    let myProfile = null;
+
+    async function loadMyProfile(){
+      if (!currentSession) { myProfile = null; return; }
+      const { data } = await supabase.from('profiles').select('telegram_contact').eq('user_id', currentSession.user.id).maybeSingle();
+      myProfile = data || null;
+    }
+
+    async function refreshAuthUI(session){
+      await checkAdmin();
+      updateAuthStatus(session);
+    }
+
+    async function startVoting(){
+      createVoteWidgets();
+      await loadNews();
+      await loadJury();
+      if (widgetsBySlug.size === 0) return;
+
+      await loadSubcategories();
+      await loadCandidates();
+      await loadNominations();
+      await loadSiteSettings();
+      widgetsBySlug.forEach((widget, slug) => updateNomCardVotedState(slug));
+      applyVotingOpenState();
+      applyResultsPublicState();
+      applyMerchPreorders();
+      subscribeToLiveCounts();
+      subscribeToSiteSettings();
+
+      supabase.auth.onAuthStateChange((_event, session) => {
+        if (_event === 'PASSWORD_RECOVERY') {
+          closeAuthModal();
+          openResetPasswordModal();
+        }
+        currentSession = isRealSession(session) ? session : null;
+        refreshAuthUI(session);
+        if (currentSession) {
+          loadMyVotes();
+          loadMyProfile();
+        } else {
+          isAdmin = false;
+          myProfile = null;
+          closeAdminPanel();
+          myVotedCandidateBySubcat.clear();
+          myRankingsBySubcat.clear();
+          widgetsBySlug.forEach((widget, slug) => updateNomCardVotedState(slug));
+        }
+      });
+
+      const { data: { session } } = await supabase.auth.getSession();
+      currentSession = isRealSession(session) ? session : null;
+      await refreshAuthUI(session);
+      if (currentSession) { await loadMyVotes(); await loadMyProfile(); }
+    }
+
+    startVoting();
+  </script>
+
+</body>
+</html>
